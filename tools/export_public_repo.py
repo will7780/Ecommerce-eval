@@ -12,7 +12,7 @@ import shutil
 
 ROOT_FILES = {
     ".dockerignore", ".env.example", ".gitattributes", ".gitignore", "AGENTS.md", "CONTRIBUTING.md",
-    "Dockerfile", "LICENSE", "README.md", "README.en.md", "SECURITY.md",
+    "Dockerfile", "LICENSE", "README.md", "README.en.md", "README.pypi.md", "SECURITY.md",
     "alembic.ini", "pyproject.toml",
 }
 PUBLIC_DESIGNS = {"PUBLIC_ARCHITECTURE.md", "GITHUB_PUBLIC_RELEASE.md"}

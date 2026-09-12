@@ -19,7 +19,7 @@ def test_private_and_generated_files_are_excluded(name):
 
 
 @pytest.mark.parametrize("name", [
-    "README.md", ".env.example", ".github/workflows/ci.yml", "src/commerce_eval/static/index.html",
+    "README.md", "README.pypi.md", ".env.example", ".github/workflows/ci.yml", ".github/workflows/publish.yml", "src/commerce_eval/static/index.html",
     "web/src/App.tsx", "skills/ecommerce-eval-onboarding/agents/openai.yaml",
     "skills/ecommerce-eval-onboarding/assets/bundle-example/importable/dataset.json",
     "docs/design/PUBLIC_ARCHITECTURE.md", "docs/assets/readme/acceptance-zh.png",

@@ -5,8 +5,8 @@ build-backend = "hatchling.build"
 [project]
 name = "commerce-agent-eval"
 version = "0.3.0rc2"
-description = "Framework-neutral evaluation platform for tool-using commerce agents"
-readme = "README.md"
+description = "Business acceptance evaluation for e-commerce agents"
+readme = { file = "README.pypi.md", content-type = "text/markdown" }
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Commerce Agent Eval contributors" }]
@@ -42,9 +42,18 @@ dev = [
 commerce-eval = "commerce_eval.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/will7780/commerce-agent-eval"
-Repository = "https://github.com/will7780/commerce-agent-eval"
-Issues = "https://github.com/will7780/commerce-agent-eval/issues"
+Homepage = "https://github.com/will7780/Ecommerce-eval"
+Repository = "https://github.com/will7780/Ecommerce-eval"
+Issues = "https://github.com/will7780/Ecommerce-eval/issues"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src/commerce_eval",
+  "/examples",
+  "/README.pypi.md",
+  "/LICENSE",
+  "/pyproject.toml",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/commerce_eval"]
