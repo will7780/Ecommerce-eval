@@ -497,12 +497,15 @@ class ExperimentRunner:
                     {"trace_id": trace.trace_id, "case_id": case.case_id, "repetition": repetition, "overall_pass": evaluation.overall_pass if evaluation is not None else None, "candidate_evaluation": evaluation is not None, "completed_runs": completed},
                 )
 
+        execution_tasks = [asyncio.create_task(execute(case, repetition)) for case, repetition in jobs]
         try:
-            await asyncio.gather(*(execute(case, repetition) for case, repetition in jobs))
+            await asyncio.gather(*execution_tasks)
             if not self.repository.experiment_is_cancelled(spec.experiment_id):
                 self.repository.update_experiment(spec.experiment_id, status="completed", completed_runs=completed)
                 await self.event_bus.publish(spec.experiment_id, "experiment.completed", {"completed_runs": completed})
         except asyncio.CancelledError:
+            # gather can report a queued task's cancellation before active resets finish.
+            await asyncio.gather(*execution_tasks, return_exceptions=True)
             self.repository.update_experiment(spec.experiment_id, status="cancelled", completed_runs=completed, error_type="experiment_cancelled")
             await self.event_bus.publish(spec.experiment_id, "experiment.cancelled", {"completed_runs": completed})
             raise

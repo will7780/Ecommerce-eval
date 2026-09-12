@@ -16,7 +16,7 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "693ce3a769432cfa30655bf139da4e3aa23f934a816ee6365afa6df1f96706e4"
+      "sha256": "43a4d46b9d696c92c2bf3fa452cdcf6fa2a9e7f8168c26c6406ce160a1d5727b"
     },
     {
       "path": ".gitignore",
@@ -120,7 +120,7 @@
     },
     {
       "path": "docs/design/GITHUB_PUBLIC_RELEASE.md",
-      "sha256": "d23e326245fa9b5d41138f7ff644bc80cf2d5ba654d1947791eeef4738c21592"
+      "sha256": "b080353d4e28cc064f68ebcc293eff680b751775274a0740f29159f20dfa065f"
     },
     {
       "path": "docs/design/PUBLIC_ARCHITECTURE.md",
@@ -376,7 +376,7 @@
     },
     {
       "path": "src/commerce_eval/experiments/runner.py",
-      "sha256": "a8532bb383cd852756b936dab85bf5186c81875e34585e67a424fcf783a1e2ba"
+      "sha256": "942598326599e837af32c4a1e2653ae579cf62a6abc400828bed04228c2ceaed"
     },
     {
       "path": "src/commerce_eval/judges/__init__.py",
@@ -808,7 +808,7 @@
     },
     {
       "path": "tests/test_experiment_lifecycle_hardening.py",
-      "sha256": "6cf569e6aa36fe6bbf1b2a100c9ed6867c0ef997a161919631c5495cc5048b13"
+      "sha256": "bfd2d97bfbf5cf9dcb91c84966fbc06a5156d14e4fd0dd1a39f82668f9a979a1"
     },
     {
       "path": "tests/test_experiment_resilience.py",

@@ -1,6 +1,7 @@
 # GitHub public source release
 
-Status: preparing the first public source snapshot. This is not a stable release
+Status: source published on GitHub; hosted compatibility checks tracked in Actions.
+This is not a stable release
 or a PyPI publication. Platform 0.3.0rc2 and Skill 0.1.0 remain unchanged.
 
 ## Phase 1: Define the publication boundary
@@ -52,4 +53,16 @@ snapshot mechanism is not a second, independently edited product codebase.
   project; file hashes match. The documented CLI requires Node 22.20 or newer.
 - Public Markdown references resolve. Anonymous screenshots retained; private
   engineering handoffs, runtime databases, caches and old private assets excluded.
-- Initial authentication verified; hosted publication and clone checks pending.
+- Public repository created and source pushed; anonymous clone matches all
+  manifest hashes. GitHub Skill installation matches all 18 source files.
+- A fresh environment installed the public clone and seeded the offline demo.
+- Initial hosted CI: Python 3.12 and wheel passed. Web job lacked its Python
+  backend; Python 3.10 exposed early gather cancellation before session cleanup.
+- Release compatibility correction: provision the web job's Python dependencies
+  and await cancelled case tasks before marking the experiment cancelled. Add
+  a delayed-reset regression; do not change scoring, remove tests or rerun models.
+- The delayed-reset regression reproduced the defect locally before the fix;
+  after correction, all 44 focused lifecycle/integration/export tests passed.
+- Public source and Skill: https://github.com/will7780/commerce-agent-eval
+  Hosted checks: https://github.com/will7780/commerce-agent-eval/actions
+  The initial failed jobs remain visible; do not represent them as passing.

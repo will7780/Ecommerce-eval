@@ -91,6 +91,43 @@ async def test_manager_cancellation_marks_experiment_and_runs_reset(tmp_path) ->
 
 
 @pytest.mark.asyncio
+async def test_cancel_waits_for_delayed_reset_before_task_finishes(tmp_path) -> None:
+    class DelayedResetTarget(HangingTarget):
+        def __init__(self):
+            super().__init__()
+            self.reset_started = asyncio.Event()
+            self.allow_reset = asyncio.Event()
+            self.reset_finished = asyncio.Event()
+
+        async def reset(self, session_id):
+            self.reset_started.set()
+            await self.allow_reset.wait()
+            await super().reset(session_id)
+            self.reset_finished.set()
+
+    repository = _repository(tmp_path, "delayed-cancel.db")
+    spec = _spec("exp-delayed-cancel", concurrency=1, timeout_ms=5000)
+    repository.create_experiment(spec)
+    target = DelayedResetTarget()
+    manager = ExperimentManager(ExperimentRunner(repository, target_factory=lambda _: target))
+    task = manager.start(spec)
+    await asyncio.wait_for(target.started.wait(), timeout=1)
+    assert manager.cancel(spec.experiment_id)
+    await asyncio.wait_for(target.reset_started.wait(), timeout=1)
+    try:
+        for _ in range(5):
+            await asyncio.sleep(0)
+        assert not task.done(), "Cancellation returned before session cleanup"
+    finally:
+        target.allow_reset.set()
+        await asyncio.wait_for(target.reset_finished.wait(), timeout=1)
+        with pytest.raises(asyncio.CancelledError):
+            await task
+    assert len(target.reset_sessions) == 1
+    assert repository.get_experiment(spec.experiment_id)["status"] == "cancelled"
+
+
+@pytest.mark.asyncio
 async def test_interrupted_run_resumes_without_repeating_completed_cases(tmp_path) -> None:
     repository = _repository(tmp_path, "resume.db")
     spec = _spec("exp-resume", timeout_ms=5000, model_config_version="model-config-7")
