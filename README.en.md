@@ -1,8 +1,19 @@
 # E-commerce Eval
 
-**Business acceptance testing for commerce agents.**
+**Business acceptance testing for agents handling everyday e-commerce operations.**
 
-One business acceptance standard. Multiple execution methods. Multiple evidence inputs.
+E-commerce Eval draws on the developer's **product, purchasing, sales, and inventory
+operations experience across Amazon, Temu, and AliExpress**, including **managing
+more than one million SKUs**, to build an evaluation system for commerce-focused agents.
+
+**If your agent manages large product catalogs and handles listing creation,
+selected price-audit scenarios, inventory management, or other daily operations,
+E-commerce Eval can help you design test cases, verify outcomes, and identify problems.**
+
+**One business acceptance standard. Multiple execution methods. Multiple evidence inputs.**
+Whether your agent uses packaged business-function tools or basic tools such as
+file reading and writing, the focus is the final operational outcome, not requiring
+every agent to use the same tools or follow identical steps.
 
 An agent saying "uploaded successfully" does not prove that the product data is correct,
 or that it published the version the user approved.
