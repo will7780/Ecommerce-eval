@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/will7780/Ecommerce-eval/actions/workflows/ci.yml"><img src="https://github.com/will7780/Ecommerce-eval/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
+  <a href="https://pypi.org/project/commerce-agent-eval/0.3.0rc2/"><img src="https://img.shields.io/badge/PyPI-0.3.0rc2-0A8896?style=flat" alt="PyPI: 0.3.0rc2"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-16806A?style=flat" alt="License: MIT"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-3572A5?style=flat" alt="Python: 3.10+"></a>
   <a href="#limits"><img src="https://img.shields.io/badge/Status-Alpha-D69E36?style=flat" alt="Status: Alpha"></a>
@@ -50,19 +51,19 @@ framework-neutral does not mean zero adaptation.
 <a id="quickstart"></a>
 ## Quick start: no API key
 
-Prerequisites: Git and Python 3.10+. This is a **source installation**, not a PyPI
-installation. The repository includes built web assets; Node.js is not needed to try it.
+Requires **Python 3.10+**. Install from [PyPI](https://pypi.org/project/commerce-agent-eval/0.3.0rc2/);
+the package includes the web UI and demo data. Git and Node.js are not required.
+
+The current release is **Alpha candidate `0.3.0rc2`**. Pin the version as shown below.
 
 ```bash
-git clone https://github.com/will7780/Ecommerce-eval.git
-cd Ecommerce-eval
 python -m venv .venv
 ```
 
 Windows PowerShell:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -e .
+.\.venv\Scripts\python.exe -m pip install "commerce-agent-eval==0.3.0rc2"
 .\.venv\Scripts\commerce-eval.exe demo
 ```
 
@@ -70,7 +71,7 @@ Windows PowerShell:
 <summary>macOS / Linux commands</summary>
 
 ```bash
-.venv/bin/python -m pip install -e .
+.venv/bin/python -m pip install "commerce-agent-eval==0.3.0rc2"
 .venv/bin/commerce-eval demo
 ```
 
@@ -78,6 +79,9 @@ Windows PowerShell:
 
 Open [http://127.0.0.1:8770](http://127.0.0.1:8770) and select the demo project.
 Press `Ctrl+C` to stop the server.
+
+To change code or build Docker, see [source installation and development](docs/LOCAL_SETUP.md#source-installation).
+The [Skill installation](#skill) is separate from the Python package.
 
 1. In **Datasets**, select **Commerce Business Acceptance / 0.3.1** to inspect eight directions, 32 cases and their business conditions. The older three-case demo is preserved; it is not the entire bank.
 2. In **Traces**, inspect the seeded examples to understand events, gates and evidence.

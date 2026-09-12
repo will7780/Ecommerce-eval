@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/will7780/Ecommerce-eval/actions/workflows/ci.yml"><img src="https://github.com/will7780/Ecommerce-eval/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
+  <a href="https://pypi.org/project/commerce-agent-eval/0.3.0rc2/"><img src="https://img.shields.io/badge/PyPI-0.3.0rc2-0A8896?style=flat" alt="PyPI: 0.3.0rc2"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-16806A?style=flat" alt="License: MIT"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-3572A5?style=flat" alt="Python: 3.10+"></a>
   <a href="#limits"><img src="https://img.shields.io/badge/Status-Alpha-D69E36?style=flat" alt="Status: Alpha"></a>
@@ -42,18 +43,18 @@ E-commerce Eval 源于开发者在 Amazon、Temu、AliExpress 多平台的商品
 <a id="quickstart"></a>
 ## 快速体验：不需要 API Key
 
-前提：Git、Python 3.10+。以下是**源码安装**，不是 PyPI 安装说明；仓库包含网页构建产物，普通体验不需要 Node.js。
+前提：**Python 3.10+**。已发布到 [PyPI](https://pypi.org/project/commerce-agent-eval/0.3.0rc2/)，安装包自带网页和演示数据，普通体验不需要 Git 或 Node.js。
+
+当前为 **Alpha 候选版 `0.3.0rc2`**，请按下面的命令指定版本安装。
 
 ```bash
-git clone https://github.com/will7780/Ecommerce-eval.git
-cd Ecommerce-eval
 python -m venv .venv
 ```
 
 Windows PowerShell：
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -e .
+.\.venv\Scripts\python.exe -m pip install "commerce-agent-eval==0.3.0rc2"
 .\.venv\Scripts\commerce-eval.exe demo
 ```
 
@@ -61,13 +62,15 @@ Windows PowerShell：
 <summary>macOS / Linux 安装命令</summary>
 
 ```bash
-.venv/bin/python -m pip install -e .
+.venv/bin/python -m pip install "commerce-agent-eval==0.3.0rc2"
 .venv/bin/commerce-eval demo
 ```
 
 </details>
 
 打开 [http://127.0.0.1:8770](http://127.0.0.1:8770)，选择演示项目。按 `Ctrl+C` 停止服务。
+
+需要改代码或构建 Docker？见[源码安装与开发环境](docs/LOCAL_SETUP.md#source-installation)；Skill 的安装方式见[下方说明](#skill)，与 Python 包分开。
 
 1. 在 **数据集**中选择 **Commerce Business Acceptance / 0.3.1**，查看八个方向、32 道题及业务条件。旧版三题演示仍保留，不是全部题库。
 2. 在 **运行轨迹**中查看预置示例，理解事件、门禁与证据。

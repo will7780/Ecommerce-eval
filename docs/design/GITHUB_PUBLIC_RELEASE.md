@@ -1,8 +1,9 @@
 # GitHub public source release
 
 Status: source published on GitHub; hosted compatibility checks tracked in Actions.
-This is not a stable release
-or a PyPI publication. Platform 0.3.0rc2 and Skill 0.1.0 remain unchanged.
+The initial source release below did not publish to PyPI. The subsequent
+[PyPI publication](../PYPI_PUBLISHING.md) distributes the same 0.3.0rc2 candidate.
+This is not a stable release. Platform 0.3.0rc2 and Skill 0.1.0 remain unchanged.
 
 ## Phase 1: Define the publication boundary
 

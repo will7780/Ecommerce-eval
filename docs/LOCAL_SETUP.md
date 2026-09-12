@@ -1,16 +1,18 @@
 # Local setup / 本地运行
 
-The primary [README](../README.md) and [English README](../README.en.md) use source
-installation. Python 3.10+ and Git are required. Built UI assets are included; Node
-is only needed to change/rebuild the frontend. No published PyPI package is assumed.
+The primary [README](../README.md) and [English README](../README.en.md) install the
+[0.3.0rc2 Alpha candidate from PyPI](https://pypi.org/project/commerce-agent-eval/0.3.0rc2/).
+Python 3.10+ is required. The wheel includes built UI assets and demo data;
+Git and Node are not required for package users.
 
 ## Virtual environments
 
-Run commands from the repository root. Windows PowerShell can invoke executables
-directly without changing the machine's script execution policy:
+Create a virtual environment in a working directory. Windows PowerShell can
+invoke executables directly without changing the machine's script execution policy:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -e .
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install "commerce-agent-eval==0.3.0rc2"
 .\.venv\Scripts\commerce-eval.exe demo
 ```
 
@@ -27,6 +29,28 @@ source .venv/bin/activate
 
 If PowerShell blocks activation, keep using the full executable paths instead;
 activation is optional.
+
+## Source installation
+
+For development, use Git and a separate environment. Do not install an editable
+checkout into the environment used to verify a PyPI release.
+
+```bash
+git clone https://github.com/will7780/Ecommerce-eval.git
+cd Ecommerce-eval
+python -m venv .venv
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e .
+.\.venv\Scripts\commerce-eval.exe demo
+```
+
+On macOS/Linux, substitute `.venv/bin/python` and `.venv/bin/commerce-eval`.
+The repository includes built UI assets. Node is needed only to change/rebuild
+the frontend, or to use the separate Skills CLI installation route.
 
 ## Separate data and ports
 
@@ -77,4 +101,3 @@ model and credentials. Never put secrets into traces, fixtures or screenshots.
 
 中文提示：优先走 README 的无 Key 演示。录屏用独立数据库；不要为启动程序降低
 PowerShell 全局安全策略。Docker 和网页开发是可选路径，不是体验平台的前置条件。
-

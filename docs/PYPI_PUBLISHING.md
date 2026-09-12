@@ -24,7 +24,13 @@ cases; demo seeding is idempotent and makes no external model calls.
 
 ## Phase 2: Trusted publication
 
-Status: In progress. GitHub's pypi environment is restricted to main.
+Status: Complete. GitHub's pypi environment is restricted to main.
+
+The first [publication workflow](https://github.com/will7780/Ecommerce-eval/actions/runs/34708139125)
+published both distributions and their attestations successfully. The source
+commit is 3aa4afe. Hosted release regression: 1575 passed, 2 skipped.
+The [source CI](https://github.com/will7780/Ecommerce-eval/actions/runs/34708127454)
+also passed Python 3.10, Python 3.12, web and wheel jobs.
 
 The user has registered a pending GitHub publisher with these exact fields:
 
@@ -45,9 +51,34 @@ stable release.
 
 ## Phase 3: Verify installation and document
 
-Status: Pending.
+Status: Complete.
 
-After PyPI confirms the upload, install the exact candidate from PyPI into another
+- [PyPI 0.3.0rc2](https://pypi.org/project/commerce-agent-eval/0.3.0rc2/)
+  contains the wheel and sdist, neither yanked. Both downloaded artifacts passed
+  the allowlist/content audit and matched PyPI and the release build hashes.
+- A second fresh environment installed the pinned version from the official
+  PyPI index with caching disabled. Non-editable imports, no-key seeding, the
+  API, frontend assets, demo traces and 32 cases passed again. The installed CLI
+  also initialized a separate demo database successfully.
+- Both GitHub READMEs now lead with pinned pip installation and link to source
+  setup. Python package and Skill installation remain separate. The Alpha
+  candidate label is preserved.
+- Documentation regression: 49 focused tests passed. Eight rendered README
+  views (Chinese/English, desktop/mobile, light/dark) had no broken images,
+  missing local links or horizontal page overflow, including expanded details.
+  These are local GitHub-style previews, not a claim of pixel-identical GitHub
+  rendering. No new paid model tests were run.
+
+Published artifact SHA256:
+
+```text
+commerce_agent_eval-0.3.0rc2-py3-none-any.whl
+7d72da64006cd5a8de0817f9a3656896ea3ba10728348dda3a420cd82049abe3
+commerce_agent_eval-0.3.0rc2.tar.gz
+f3d4836dd9ed3670589c4be7dbf2a1bbe8573b87caea5418125ca4be153eeaf2
+```
+
+Verification procedure: after PyPI confirms the upload, install the exact candidate from PyPI into another
 clean environment, compare downloaded artifact hashes against the published
 files, and repeat the no-key checks. Then update both READMEs and local setup to
 lead with a version-pinned pip install; retain source and Skill installation.

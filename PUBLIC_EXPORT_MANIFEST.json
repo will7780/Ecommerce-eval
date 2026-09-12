@@ -44,11 +44,11 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "1a8c548c835f6e71355d2bc8dcb1242591d2d22e83fb17f65a5f48449927afd1"
+      "sha256": "5921cec4cbcb332cc5f09fce05eb0f6111e4cfec8c2e69067ebcc102efb06009"
     },
     {
       "path": "README.md",
-      "sha256": "8a5eedff6a5559d0d186f1d9b28178c40ba25d82909f46fd760544f426a55245"
+      "sha256": "e550941361ce1b366412a56e8497c45ca6ecbdbdfc5fc87687e85d487eb2fe17"
     },
     {
       "path": "README.pypi.md",
@@ -76,7 +76,7 @@
     },
     {
       "path": "docs/LOCAL_SETUP.md",
-      "sha256": "a1ddaa45c0677d2a941d3b39f043ceb55f6afdcb09ea67c090de322042bc9aba"
+      "sha256": "310a600dfba6b466e509429b46121e954e4a9495af774094daafb4fc1fe91213"
     },
     {
       "path": "docs/METRICS.md",
@@ -96,7 +96,7 @@
     },
     {
       "path": "docs/PYPI_PUBLISHING.md",
-      "sha256": "bc800ad59fee32a709066a3566d3b6e6675cdf2a938bf4f367078c4603a9b694"
+      "sha256": "f310574622fad19b94dd4e9cf0eda12d306e66aef015c8f001d108df5023b658"
     },
     {
       "path": "docs/README_MEDIA.md",
@@ -136,7 +136,7 @@
     },
     {
       "path": "docs/design/GITHUB_PUBLIC_RELEASE.md",
-      "sha256": "b080353d4e28cc064f68ebcc293eff680b751775274a0740f29159f20dfa065f"
+      "sha256": "64a1397aa6e92b75a5130e074c02ab92b00ee0d272bb12fd8a838c2ac872a8cb"
     },
     {
       "path": "docs/design/PUBLIC_ARCHITECTURE.md",
@@ -908,7 +908,7 @@
     },
     {
       "path": "tests/test_readme_media.py",
-      "sha256": "0592449746484cebafd41ae03d3a73d38474b45adf55e0945dea97f055816f4f"
+      "sha256": "7543f4a070aace92a050c9c92a975071e20a577c9c035235e57ccad434bb3da4"
     },
     {
       "path": "tests/test_reference_evaluation_boundary.py",
