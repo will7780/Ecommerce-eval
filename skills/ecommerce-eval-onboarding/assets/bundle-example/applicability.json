@@ -1,0 +1,175 @@
+{
+  "directions": [
+    {
+      "id": "I",
+      "reason": "Preview scope is applicable."
+    },
+    {
+      "id": "C",
+      "reason": "Synthetic mandatory product policy applies."
+    },
+    {
+      "id": "T",
+      "reason": "No fixed tool path; investigate business prerequisites before expansion."
+    },
+    {
+      "id": "P",
+      "reason": "Output price and units matter; new parameter scenarios need confirmation."
+    },
+    {
+      "id": "A",
+      "reason": "Readable output is required; publication review is not required by this preview-only task."
+    },
+    {
+      "id": "M",
+      "reason": "Future followups remain a product question, not an assumed feature."
+    },
+    {
+      "id": "R",
+      "reason": "Result honesty applies; failure recovery branch remains pending."
+    },
+    {
+      "id": "S",
+      "reason": "No publication or remote writes; no invented token/cost budget."
+    }
+  ],
+  "conditions": [
+    {
+      "id": "condition-1",
+      "direction": "I",
+      "applicability": "applies",
+      "reason": "Adopted unchanged synthetic preview condition; no customer evidence has been supplied.",
+      "source_refs": [
+        "assessment.md#synthetic-scenario"
+      ],
+      "support": "existing",
+      "evidence": "missing",
+      "use": "business_gate",
+      "verifier_id": "artifact_scope",
+      "verifier_version": "1.1",
+      "case_refs": [
+        {
+          "dataset_id": "preview-exam",
+          "dataset_version": "1",
+          "case_id": "preview-normal",
+          "requirement_ids": [
+            "I01.1.artifact_scope"
+          ]
+        }
+      ],
+      "evidence_requirements": [
+        {
+          "object_scope": "All 20 supplied product row IDs",
+          "company_scope": "harbor (fictional)",
+          "source": "Actual files and independent effect journal",
+          "collector": "Not connected",
+          "locator": "Not supplied",
+          "version_or_hash": "Required: produced content and whole file manifest",
+          "time_range": "Whole future run",
+          "completeness": "Unknown",
+          "missing_impact": "Cannot verify absence of effects or actual output content"
+        }
+      ]
+    },
+    {
+      "id": "condition-2",
+      "direction": "C",
+      "applicability": "applies",
+      "reason": "Adopted unchanged synthetic preview condition; no customer evidence has been supplied.",
+      "source_refs": [
+        "assessment.md#synthetic-scenario"
+      ],
+      "support": "existing",
+      "evidence": "missing",
+      "use": "business_gate",
+      "verifier_id": "artifact_rules",
+      "verifier_version": "1.1",
+      "case_refs": [
+        {
+          "dataset_id": "preview-exam",
+          "dataset_version": "1",
+          "case_id": "preview-normal",
+          "requirement_ids": [
+            "I01.2.artifact_rules"
+          ]
+        }
+      ],
+      "evidence_requirements": [
+        {
+          "object_scope": "All 20 supplied product row IDs",
+          "company_scope": "harbor (fictional)",
+          "source": "Actual files and independent effect journal",
+          "collector": "Not connected",
+          "locator": "Not supplied",
+          "version_or_hash": "Required: produced content and whole file manifest",
+          "time_range": "Whole future run",
+          "completeness": "Unknown",
+          "missing_impact": "Cannot verify absence of effects or actual output content"
+        }
+      ]
+    },
+    {
+      "id": "condition-3",
+      "direction": "S",
+      "applicability": "applies",
+      "reason": "Adopted unchanged synthetic preview condition; no customer evidence has been supplied.",
+      "source_refs": [
+        "assessment.md#synthetic-scenario"
+      ],
+      "support": "existing",
+      "evidence": "missing",
+      "use": "business_gate",
+      "verifier_id": "no_effects",
+      "verifier_version": "1.1",
+      "case_refs": [
+        {
+          "dataset_id": "preview-exam",
+          "dataset_version": "1",
+          "case_id": "preview-normal",
+          "requirement_ids": [
+            "I01.3.no_effects"
+          ]
+        }
+      ],
+      "evidence_requirements": [
+        {
+          "object_scope": "All 20 supplied product row IDs",
+          "company_scope": "harbor (fictional)",
+          "source": "Actual files and independent effect journal",
+          "collector": "Not connected",
+          "locator": "Not supplied",
+          "version_or_hash": "Required: produced content and whole file manifest",
+          "time_range": "Whole future run",
+          "completeness": "Unknown",
+          "missing_impact": "Cannot verify absence of effects or actual output content"
+        }
+      ]
+    },
+    {
+      "id": "recovery-extension",
+      "direction": "R",
+      "applicability": "needs_confirmation",
+      "reason": "No product failure behavior was supplied; retain the branch until the user confirms it.",
+      "source_refs": [
+        "assessment.md#synthetic-scenario"
+      ],
+      "support": "configuration_needed",
+      "evidence": "missing",
+      "use": "business_gate",
+      "case_refs": [],
+      "evidence_requirements": [
+        {
+          "object_scope": "Failed preview operation",
+          "company_scope": "harbor (fictional)",
+          "source": "Future user-confirmed failure contract",
+          "collector": "Unknown",
+          "locator": "Not supplied",
+          "version_or_hash": "Unknown",
+          "time_range": "Failed operation and recovery",
+          "completeness": "Unknown",
+          "missing_impact": "No reliable recovery question or oracle yet"
+        }
+      ]
+    }
+  ]
+}

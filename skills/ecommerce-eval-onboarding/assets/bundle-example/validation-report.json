@@ -1,0 +1,263 @@
+{
+  "skill_version": "0.1.0",
+  "import_status": "valid",
+  "business_readiness": {
+    "status": "not_checked",
+    "reason_codes": [
+      "business_rules_or_fixtures_need_review"
+    ],
+    "source": "offline_bundle_audit_not_collector_registration"
+  },
+  "checks": {
+    "structure": {
+      "status": "valid"
+    },
+    "references": {
+      "status": "valid"
+    },
+    "import": {
+      "status": "valid"
+    },
+    "rules": {
+      "status": "valid",
+      "cases": [
+        {
+          "dataset_id": "preview-exam",
+          "dataset_version": "1",
+          "case_id": "preview-normal",
+          "status": "valid",
+          "reason_codes": [
+            "builtin_oracle_conformance_only"
+          ],
+          "checks": [
+            {
+              "surface": "business_interface",
+              "valid": true,
+              "positive": "pass",
+              "negative_statuses": [
+                "fail",
+                "fail",
+                "fail"
+              ],
+              "missing_evidence": "error"
+            },
+            {
+              "surface": "file_editor",
+              "valid": true,
+              "positive": "pass",
+              "negative_statuses": [
+                "fail",
+                "fail",
+                "fail"
+              ],
+              "missing_evidence": "error"
+            }
+          ]
+        }
+      ],
+      "scope": "grader_fixtures_not_agent_performance"
+    }
+  },
+  "errors": [],
+  "resources": [
+    {
+      "path": "importable/tool-contracts.json",
+      "status": "valid"
+    },
+    {
+      "path": "importable/evaluator-set.json",
+      "status": "valid"
+    },
+    {
+      "path": "importable/dataset.json",
+      "status": "valid"
+    }
+  ],
+  "execution_performed": false,
+  "credentials_accessed": false,
+  "temporary_environment_cleaned": true,
+  "platform": {
+    "skill_version": "0.1.0",
+    "status": "valid",
+    "platform_version": "0.3.0rc2",
+    "supported_baseline": "0.3.0rc2",
+    "reason_codes": [
+      "editable_distribution_metadata_stale_using_inspected_runtime"
+    ],
+    "distribution_version": "0.1.0",
+    "editable_source": true,
+    "contract_versions": [
+      "1.0",
+      "1.1",
+      "1.2"
+    ],
+    "bank_version": "0.3.1",
+    "import_kinds": [
+      "dataset",
+      "evaluator-set",
+      "products",
+      "rules",
+      "target",
+      "tool-contracts",
+      "trace"
+    ],
+    "evaluator_route": "builtin_offline",
+    "external_collector_upload": false,
+    "plugins_loaded": false,
+    "verifiers": {
+      "1.0": [
+        "artifact_review",
+        "artifact_rules",
+        "artifact_scope",
+        "authorization",
+        "business_dependencies",
+        "business_efficiency",
+        "clarification",
+        "company_isolation",
+        "failure_recovery",
+        "latest_facts",
+        "no_effects",
+        "operation_outcome",
+        "parameter_preconditions",
+        "policy_selection",
+        "preflight",
+        "resource_accounting",
+        "result_report",
+        "state_query"
+      ],
+      "1.1": [
+        "artifact_review",
+        "artifact_rules",
+        "artifact_scope",
+        "authorization",
+        "business_dependencies",
+        "business_efficiency",
+        "clarification",
+        "company_isolation",
+        "failure_recovery",
+        "latest_facts",
+        "no_effects",
+        "operation_outcome",
+        "parameter_preconditions",
+        "policy_selection",
+        "preflight",
+        "resource_accounting",
+        "result_report",
+        "state_query"
+      ]
+    }
+  },
+  "coverage": {
+    "counts": {
+      "total": 4,
+      "applicable": 4,
+      "covered": 3,
+      "pending_confirmation": 1,
+      "evidence_required": 4,
+      "extension_required": 0,
+      "uncovered": 1,
+      "not_applicable": 0
+    },
+    "conditions": [
+      {
+        "condition_id": "condition-1",
+        "status": "evidence_required",
+        "reason_codes": [
+          "evidence_missing_or_untrusted"
+        ],
+        "applicability": "applies",
+        "source_refs": [
+          "assessment.md#synthetic-scenario"
+        ],
+        "evidence_requirements": [
+          {
+            "object_scope": "All 20 supplied product row IDs",
+            "company_scope": "harbor (fictional)",
+            "source": "Actual files and independent effect journal",
+            "collector": "Not connected",
+            "locator": "Not supplied",
+            "version_or_hash": "Required: produced content and whole file manifest",
+            "time_range": "Whole future run",
+            "completeness": "Unknown",
+            "missing_impact": "Cannot verify absence of effects or actual output content"
+          }
+        ]
+      },
+      {
+        "condition_id": "condition-2",
+        "status": "evidence_required",
+        "reason_codes": [
+          "evidence_missing_or_untrusted"
+        ],
+        "applicability": "applies",
+        "source_refs": [
+          "assessment.md#synthetic-scenario"
+        ],
+        "evidence_requirements": [
+          {
+            "object_scope": "All 20 supplied product row IDs",
+            "company_scope": "harbor (fictional)",
+            "source": "Actual files and independent effect journal",
+            "collector": "Not connected",
+            "locator": "Not supplied",
+            "version_or_hash": "Required: produced content and whole file manifest",
+            "time_range": "Whole future run",
+            "completeness": "Unknown",
+            "missing_impact": "Cannot verify absence of effects or actual output content"
+          }
+        ]
+      },
+      {
+        "condition_id": "condition-3",
+        "status": "evidence_required",
+        "reason_codes": [
+          "evidence_missing_or_untrusted"
+        ],
+        "applicability": "applies",
+        "source_refs": [
+          "assessment.md#synthetic-scenario"
+        ],
+        "evidence_requirements": [
+          {
+            "object_scope": "All 20 supplied product row IDs",
+            "company_scope": "harbor (fictional)",
+            "source": "Actual files and independent effect journal",
+            "collector": "Not connected",
+            "locator": "Not supplied",
+            "version_or_hash": "Required: produced content and whole file manifest",
+            "time_range": "Whole future run",
+            "completeness": "Unknown",
+            "missing_impact": "Cannot verify absence of effects or actual output content"
+          }
+        ]
+      },
+      {
+        "condition_id": "recovery-extension",
+        "status": "not_checked",
+        "reason_codes": [
+          "question_not_yet_covered",
+          "business_rule_confirmation_required"
+        ],
+        "applicability": "needs_confirmation",
+        "source_refs": [
+          "assessment.md#synthetic-scenario"
+        ],
+        "evidence_requirements": [
+          {
+            "object_scope": "Failed preview operation",
+            "company_scope": "harbor (fictional)",
+            "source": "Future user-confirmed failure contract",
+            "collector": "Unknown",
+            "locator": "Not supplied",
+            "version_or_hash": "Unknown",
+            "time_range": "Failed operation and recovery",
+            "completeness": "Unknown",
+            "missing_impact": "No reliable recovery question or oracle yet"
+          }
+        ]
+      }
+    ],
+    "counts_overlap": true,
+    "scope": "declared_conditions_only_not_independent_product_coverage"
+  }
+}

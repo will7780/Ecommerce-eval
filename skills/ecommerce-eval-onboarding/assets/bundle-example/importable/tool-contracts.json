@@ -1,0 +1,52 @@
+{
+  "set_id": "preview-tools",
+  "version": "1",
+  "tools": [
+    {
+      "contract_version": "1.2",
+      "tool_id": "prepare_preview",
+      "version": "1",
+      "title": "Prepare an isolated preview",
+      "description": "Synthetic API documented in assessment.md, not a real connector.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "row_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "row_ids"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "artifact_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact_id"
+        ]
+      },
+      "risk_level": "L1",
+      "side_effect_class": "local_write",
+      "confirmation_required": false,
+      "preconditions": [],
+      "postconditions": [],
+      "success_evidence": [
+        "readable artifact rows"
+      ],
+      "failures": [],
+      "idempotent": true,
+      "sensitive_fields": [],
+      "allowed_parameter_sources": [],
+      "tags": []
+    }
+  ]
+}

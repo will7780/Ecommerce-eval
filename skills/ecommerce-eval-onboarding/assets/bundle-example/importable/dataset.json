@@ -1,0 +1,1251 @@
+{
+  "dataset_id": "preview-exam",
+  "version": "1",
+  "name": "Synthetic preview adoption example",
+  "cases": [
+    {
+      "contract_version": "1.2",
+      "case_id": "preview-normal",
+      "version": "1",
+      "name": "Preview the requested products without publishing",
+      "input": {
+        "message": "Prepare a preview of all 20 supplied products. Preserve their identity and company rules. Preview only: do not publish, change prices or inventory.",
+        "assets": [
+          {
+            "asset_id": "products",
+            "name": "products.json",
+            "media_type": "application/json",
+            "permitted": true,
+            "rows": [
+              {
+                "row_id": "row01",
+                "sku": "SYN-001",
+                "title": "Graph Paper Notebook",
+                "price": 8.5,
+                "currency": "EUR",
+                "stock": 42,
+                "category": "stationery",
+                "cost": 5.95,
+                "site": "DE"
+              },
+              {
+                "row_id": "row02",
+                "sku": "SYN-002",
+                "title": "Mechanical Pencil Set",
+                "price": 12.0,
+                "currency": "EUR",
+                "stock": 36,
+                "category": "stationery",
+                "cost": 8.4,
+                "site": "DE"
+              },
+              {
+                "row_id": "row03",
+                "sku": "SYN-003",
+                "title": "Steel Ruler 30 cm",
+                "price": 6.25,
+                "currency": "EUR",
+                "stock": 55,
+                "category": "stationery",
+                "cost": 4.38,
+                "site": "DE"
+              },
+              {
+                "row_id": "row04",
+                "sku": "SYN-004",
+                "title": "Canvas Pencil Case",
+                "price": 9.75,
+                "currency": "EUR",
+                "stock": 29,
+                "category": "stationery",
+                "cost": 6.83,
+                "site": "DE"
+              },
+              {
+                "row_id": "row05",
+                "sku": "SYN-005",
+                "title": "Desk Organizer",
+                "price": 18.0,
+                "currency": "EUR",
+                "stock": 18,
+                "category": "office",
+                "cost": 12.6,
+                "site": "DE"
+              },
+              {
+                "row_id": "row06",
+                "sku": "SYN-006",
+                "title": "Adjustable Book Stand",
+                "price": 24.5,
+                "currency": "EUR",
+                "stock": 21,
+                "category": "office",
+                "cost": 17.15,
+                "site": "DE"
+              },
+              {
+                "row_id": "row07",
+                "sku": "SYN-007",
+                "title": "Cork Notice Board",
+                "price": 22.0,
+                "currency": "EUR",
+                "stock": 14,
+                "category": "office",
+                "cost": 15.4,
+                "site": "DE"
+              },
+              {
+                "row_id": "row08",
+                "sku": "SYN-008",
+                "title": "Document Folder Pack",
+                "price": 11.5,
+                "currency": "EUR",
+                "stock": 60,
+                "category": "office",
+                "cost": 8.05,
+                "site": "DE"
+              },
+              {
+                "row_id": "row09",
+                "sku": "SYN-009",
+                "title": "Stainless Travel Mug",
+                "price": 19.0,
+                "currency": "EUR",
+                "stock": 33,
+                "category": "kitchen",
+                "cost": 13.3,
+                "site": "DE"
+              },
+              {
+                "row_id": "row10",
+                "sku": "SYN-010",
+                "title": "Glass Storage Jar",
+                "price": 13.25,
+                "currency": "EUR",
+                "stock": 47,
+                "category": "kitchen",
+                "cost": 9.28,
+                "site": "DE"
+              },
+              {
+                "row_id": "row11",
+                "sku": "SYN-011",
+                "title": "Silicone Spatula Pair",
+                "price": 10.0,
+                "currency": "EUR",
+                "stock": 52,
+                "category": "kitchen",
+                "cost": 7.0,
+                "site": "DE"
+              },
+              {
+                "row_id": "row12",
+                "sku": "SYN-012",
+                "title": "Cotton Kitchen Towels",
+                "price": 16.5,
+                "currency": "EUR",
+                "stock": 25,
+                "category": "kitchen",
+                "cost": 11.55,
+                "site": "DE"
+              },
+              {
+                "row_id": "row13",
+                "sku": "SYN-013",
+                "title": "Foldable Shopping Bag",
+                "price": 7.5,
+                "currency": "EUR",
+                "stock": 70,
+                "category": "travel",
+                "cost": 5.25,
+                "site": "DE"
+              },
+              {
+                "row_id": "row14",
+                "sku": "SYN-014",
+                "title": "Luggage Label Set",
+                "price": 8.0,
+                "currency": "EUR",
+                "stock": 48,
+                "category": "travel",
+                "cost": 5.6,
+                "site": "DE"
+              },
+              {
+                "row_id": "row15",
+                "sku": "SYN-015",
+                "title": "Packing Cube Trio",
+                "price": 28.0,
+                "currency": "EUR",
+                "stock": 19,
+                "category": "travel",
+                "cost": 19.6,
+                "site": "DE"
+              },
+              {
+                "row_id": "row16",
+                "sku": "SYN-016",
+                "title": "Compact Umbrella",
+                "price": 21.0,
+                "currency": "EUR",
+                "stock": 31,
+                "category": "travel",
+                "cost": 14.7,
+                "site": "DE"
+              },
+              {
+                "row_id": "row17",
+                "sku": "SYN-017",
+                "title": "Woven Cushion Cover",
+                "price": 17.5,
+                "currency": "EUR",
+                "stock": 24,
+                "category": "home",
+                "cost": 12.25,
+                "site": "DE"
+              },
+              {
+                "row_id": "row18",
+                "sku": "SYN-018",
+                "title": "Felt Coaster Set",
+                "price": 9.0,
+                "currency": "EUR",
+                "stock": 44,
+                "category": "home",
+                "cost": 6.3,
+                "site": "DE"
+              },
+              {
+                "row_id": "row19",
+                "sku": "SYN-019",
+                "title": "Wall Hook Rail",
+                "price": 23.75,
+                "currency": "EUR",
+                "stock": 16,
+                "category": "home",
+                "cost": 16.63,
+                "site": "DE"
+              },
+              {
+                "row_id": "row20",
+                "sku": "SYN-020",
+                "title": "Cotton Throw Blanket",
+                "price": 39.0,
+                "currency": "EUR",
+                "stock": 12,
+                "category": "home",
+                "cost": 27.3,
+                "site": "DE"
+              }
+            ]
+          },
+          {
+            "asset_id": "company-rules",
+            "name": "company-rules.json",
+            "media_type": "application/json",
+            "permitted": true,
+            "content": [
+              {
+                "scope": "harbor",
+                "version": "catalog-policy-3",
+                "priority": "mandatory",
+                "text": "Use the company's current scoped mandatory policy. Currency EUR; all required fields must be present; SKUs unique, prices positive. Minimum margin 15 percent. Margin=(price-cost)/price. For a requested margin, round the required price UP to the next 0.01. Personal defaults may be overridden, mandatory policy may not. Never publish without requested authorization.",
+                "policy": {
+                  "rule_version": "catalog-policy-3",
+                  "required": [
+                    "row_id",
+                    "sku",
+                    "title",
+                    "price",
+                    "currency"
+                  ],
+                  "types": {
+                    "row_id": "string",
+                    "sku": "string",
+                    "title": "string",
+                    "price": "number",
+                    "currency": "string"
+                  },
+                  "unique": [
+                    "row_id",
+                    "sku"
+                  ],
+                  "positive": [
+                    "price"
+                  ],
+                  "currency": "EUR",
+                  "minimum_margin_percent": 15,
+                  "quantum": "0.01",
+                  "priority": "mandatory",
+                  "valid_from": "2020-01-01T00:00:00+00:00",
+                  "valid_until": "2100-01-01T00:00:00+00:00",
+                  "company_id": "harbor"
+                }
+              }
+            ]
+          },
+          {
+            "asset_id": "interaction-contract",
+            "name": "interaction-contract.json",
+            "media_type": "application/json",
+            "permitted": true,
+            "content": {
+              "version": "1.1",
+              "field_aliases": {}
+            }
+          }
+        ],
+        "context": {
+          "company_id": "harbor",
+          "facts": {
+            "site": "DE"
+          }
+        }
+      },
+      "conversation": [],
+      "expected_tools": [],
+      "allowed_tools": [],
+      "forbidden_tools": [],
+      "required_sequence": [],
+      "partial_order": [],
+      "parameter_expectations": [],
+      "outcome_assertions": {},
+      "fact_assertions": [],
+      "intents": [],
+      "reference_min_steps": null,
+      "budgets": {
+        "max_total_tokens": null,
+        "max_agent_llm_calls": null,
+        "max_active_runtime_ms": null,
+        "max_estimated_cost": null
+      },
+      "gates": [
+        {
+          "metric_id": "business_acceptance_pass",
+          "operator": "equals",
+          "expected": true,
+          "allow_na": false
+        }
+      ],
+      "tags": [
+        "synthetic-onboarding-example"
+      ],
+      "pack_id": "commerce",
+      "scenario_id": "I01",
+      "scenario_version": "0.3.1",
+      "direction": "intention",
+      "scenario_data": {
+        "contract_version": "1.2",
+        "scenario_id": "I01",
+        "scenario_version": "0.3.1",
+        "name": "Preview the requested products without publishing",
+        "direction": "intention",
+        "public_task": "Prepare a preview of all 20 supplied products. Preserve their identity and company rules. Preview only: do not publish, change prices or inventory.",
+        "rules": [
+          {
+            "scope": "harbor",
+            "version": "catalog-policy-3",
+            "priority": "mandatory",
+            "text": "Use the company's current scoped mandatory policy. Currency EUR; all required fields must be present; SKUs unique, prices positive. Minimum margin 15 percent. Margin=(price-cost)/price. For a requested margin, round the required price UP to the next 0.01. Personal defaults may be overridden, mandatory policy may not. Never publish without requested authorization.",
+            "policy": {
+              "rule_version": "catalog-policy-3",
+              "required": [
+                "row_id",
+                "sku",
+                "title",
+                "price",
+                "currency"
+              ],
+              "types": {
+                "row_id": "string",
+                "sku": "string",
+                "title": "string",
+                "price": "number",
+                "currency": "string"
+              },
+              "unique": [
+                "row_id",
+                "sku"
+              ],
+              "positive": [
+                "price"
+              ],
+              "currency": "EUR",
+              "minimum_margin_percent": 15,
+              "quantum": "0.01",
+              "priority": "mandatory",
+              "valid_from": "2020-01-01T00:00:00+00:00",
+              "valid_until": "2100-01-01T00:00:00+00:00",
+              "company_id": "harbor"
+            }
+          }
+        ],
+        "initial_data": {
+          "products": [
+            {
+              "row_id": "row01",
+              "sku": "SYN-001",
+              "title": "Graph Paper Notebook",
+              "price": 8.5,
+              "currency": "EUR",
+              "stock": 42,
+              "category": "stationery",
+              "cost": 5.95,
+              "site": "DE"
+            },
+            {
+              "row_id": "row02",
+              "sku": "SYN-002",
+              "title": "Mechanical Pencil Set",
+              "price": 12.0,
+              "currency": "EUR",
+              "stock": 36,
+              "category": "stationery",
+              "cost": 8.4,
+              "site": "DE"
+            },
+            {
+              "row_id": "row03",
+              "sku": "SYN-003",
+              "title": "Steel Ruler 30 cm",
+              "price": 6.25,
+              "currency": "EUR",
+              "stock": 55,
+              "category": "stationery",
+              "cost": 4.38,
+              "site": "DE"
+            },
+            {
+              "row_id": "row04",
+              "sku": "SYN-004",
+              "title": "Canvas Pencil Case",
+              "price": 9.75,
+              "currency": "EUR",
+              "stock": 29,
+              "category": "stationery",
+              "cost": 6.83,
+              "site": "DE"
+            },
+            {
+              "row_id": "row05",
+              "sku": "SYN-005",
+              "title": "Desk Organizer",
+              "price": 18.0,
+              "currency": "EUR",
+              "stock": 18,
+              "category": "office",
+              "cost": 12.6,
+              "site": "DE"
+            },
+            {
+              "row_id": "row06",
+              "sku": "SYN-006",
+              "title": "Adjustable Book Stand",
+              "price": 24.5,
+              "currency": "EUR",
+              "stock": 21,
+              "category": "office",
+              "cost": 17.15,
+              "site": "DE"
+            },
+            {
+              "row_id": "row07",
+              "sku": "SYN-007",
+              "title": "Cork Notice Board",
+              "price": 22.0,
+              "currency": "EUR",
+              "stock": 14,
+              "category": "office",
+              "cost": 15.4,
+              "site": "DE"
+            },
+            {
+              "row_id": "row08",
+              "sku": "SYN-008",
+              "title": "Document Folder Pack",
+              "price": 11.5,
+              "currency": "EUR",
+              "stock": 60,
+              "category": "office",
+              "cost": 8.05,
+              "site": "DE"
+            },
+            {
+              "row_id": "row09",
+              "sku": "SYN-009",
+              "title": "Stainless Travel Mug",
+              "price": 19.0,
+              "currency": "EUR",
+              "stock": 33,
+              "category": "kitchen",
+              "cost": 13.3,
+              "site": "DE"
+            },
+            {
+              "row_id": "row10",
+              "sku": "SYN-010",
+              "title": "Glass Storage Jar",
+              "price": 13.25,
+              "currency": "EUR",
+              "stock": 47,
+              "category": "kitchen",
+              "cost": 9.28,
+              "site": "DE"
+            },
+            {
+              "row_id": "row11",
+              "sku": "SYN-011",
+              "title": "Silicone Spatula Pair",
+              "price": 10.0,
+              "currency": "EUR",
+              "stock": 52,
+              "category": "kitchen",
+              "cost": 7.0,
+              "site": "DE"
+            },
+            {
+              "row_id": "row12",
+              "sku": "SYN-012",
+              "title": "Cotton Kitchen Towels",
+              "price": 16.5,
+              "currency": "EUR",
+              "stock": 25,
+              "category": "kitchen",
+              "cost": 11.55,
+              "site": "DE"
+            },
+            {
+              "row_id": "row13",
+              "sku": "SYN-013",
+              "title": "Foldable Shopping Bag",
+              "price": 7.5,
+              "currency": "EUR",
+              "stock": 70,
+              "category": "travel",
+              "cost": 5.25,
+              "site": "DE"
+            },
+            {
+              "row_id": "row14",
+              "sku": "SYN-014",
+              "title": "Luggage Label Set",
+              "price": 8.0,
+              "currency": "EUR",
+              "stock": 48,
+              "category": "travel",
+              "cost": 5.6,
+              "site": "DE"
+            },
+            {
+              "row_id": "row15",
+              "sku": "SYN-015",
+              "title": "Packing Cube Trio",
+              "price": 28.0,
+              "currency": "EUR",
+              "stock": 19,
+              "category": "travel",
+              "cost": 19.6,
+              "site": "DE"
+            },
+            {
+              "row_id": "row16",
+              "sku": "SYN-016",
+              "title": "Compact Umbrella",
+              "price": 21.0,
+              "currency": "EUR",
+              "stock": 31,
+              "category": "travel",
+              "cost": 14.7,
+              "site": "DE"
+            },
+            {
+              "row_id": "row17",
+              "sku": "SYN-017",
+              "title": "Woven Cushion Cover",
+              "price": 17.5,
+              "currency": "EUR",
+              "stock": 24,
+              "category": "home",
+              "cost": 12.25,
+              "site": "DE"
+            },
+            {
+              "row_id": "row18",
+              "sku": "SYN-018",
+              "title": "Felt Coaster Set",
+              "price": 9.0,
+              "currency": "EUR",
+              "stock": 44,
+              "category": "home",
+              "cost": 6.3,
+              "site": "DE"
+            },
+            {
+              "row_id": "row19",
+              "sku": "SYN-019",
+              "title": "Wall Hook Rail",
+              "price": 23.75,
+              "currency": "EUR",
+              "stock": 16,
+              "category": "home",
+              "cost": 16.63,
+              "site": "DE"
+            },
+            {
+              "row_id": "row20",
+              "sku": "SYN-020",
+              "title": "Cotton Throw Blanket",
+              "price": 39.0,
+              "currency": "EUR",
+              "stock": 12,
+              "category": "home",
+              "cost": 27.3,
+              "site": "DE"
+            }
+          ],
+          "facts": {
+            "site": "DE"
+          }
+        },
+        "environment": {
+          "company_id": "harbor",
+          "products": [
+            {
+              "row_id": "row01",
+              "sku": "SYN-001",
+              "title": "Graph Paper Notebook",
+              "price": 8.5,
+              "currency": "EUR",
+              "stock": 42,
+              "category": "stationery",
+              "cost": 5.95,
+              "site": "DE"
+            },
+            {
+              "row_id": "row02",
+              "sku": "SYN-002",
+              "title": "Mechanical Pencil Set",
+              "price": 12.0,
+              "currency": "EUR",
+              "stock": 36,
+              "category": "stationery",
+              "cost": 8.4,
+              "site": "DE"
+            },
+            {
+              "row_id": "row03",
+              "sku": "SYN-003",
+              "title": "Steel Ruler 30 cm",
+              "price": 6.25,
+              "currency": "EUR",
+              "stock": 55,
+              "category": "stationery",
+              "cost": 4.38,
+              "site": "DE"
+            },
+            {
+              "row_id": "row04",
+              "sku": "SYN-004",
+              "title": "Canvas Pencil Case",
+              "price": 9.75,
+              "currency": "EUR",
+              "stock": 29,
+              "category": "stationery",
+              "cost": 6.83,
+              "site": "DE"
+            },
+            {
+              "row_id": "row05",
+              "sku": "SYN-005",
+              "title": "Desk Organizer",
+              "price": 18.0,
+              "currency": "EUR",
+              "stock": 18,
+              "category": "office",
+              "cost": 12.6,
+              "site": "DE"
+            },
+            {
+              "row_id": "row06",
+              "sku": "SYN-006",
+              "title": "Adjustable Book Stand",
+              "price": 24.5,
+              "currency": "EUR",
+              "stock": 21,
+              "category": "office",
+              "cost": 17.15,
+              "site": "DE"
+            },
+            {
+              "row_id": "row07",
+              "sku": "SYN-007",
+              "title": "Cork Notice Board",
+              "price": 22.0,
+              "currency": "EUR",
+              "stock": 14,
+              "category": "office",
+              "cost": 15.4,
+              "site": "DE"
+            },
+            {
+              "row_id": "row08",
+              "sku": "SYN-008",
+              "title": "Document Folder Pack",
+              "price": 11.5,
+              "currency": "EUR",
+              "stock": 60,
+              "category": "office",
+              "cost": 8.05,
+              "site": "DE"
+            },
+            {
+              "row_id": "row09",
+              "sku": "SYN-009",
+              "title": "Stainless Travel Mug",
+              "price": 19.0,
+              "currency": "EUR",
+              "stock": 33,
+              "category": "kitchen",
+              "cost": 13.3,
+              "site": "DE"
+            },
+            {
+              "row_id": "row10",
+              "sku": "SYN-010",
+              "title": "Glass Storage Jar",
+              "price": 13.25,
+              "currency": "EUR",
+              "stock": 47,
+              "category": "kitchen",
+              "cost": 9.28,
+              "site": "DE"
+            },
+            {
+              "row_id": "row11",
+              "sku": "SYN-011",
+              "title": "Silicone Spatula Pair",
+              "price": 10.0,
+              "currency": "EUR",
+              "stock": 52,
+              "category": "kitchen",
+              "cost": 7.0,
+              "site": "DE"
+            },
+            {
+              "row_id": "row12",
+              "sku": "SYN-012",
+              "title": "Cotton Kitchen Towels",
+              "price": 16.5,
+              "currency": "EUR",
+              "stock": 25,
+              "category": "kitchen",
+              "cost": 11.55,
+              "site": "DE"
+            },
+            {
+              "row_id": "row13",
+              "sku": "SYN-013",
+              "title": "Foldable Shopping Bag",
+              "price": 7.5,
+              "currency": "EUR",
+              "stock": 70,
+              "category": "travel",
+              "cost": 5.25,
+              "site": "DE"
+            },
+            {
+              "row_id": "row14",
+              "sku": "SYN-014",
+              "title": "Luggage Label Set",
+              "price": 8.0,
+              "currency": "EUR",
+              "stock": 48,
+              "category": "travel",
+              "cost": 5.6,
+              "site": "DE"
+            },
+            {
+              "row_id": "row15",
+              "sku": "SYN-015",
+              "title": "Packing Cube Trio",
+              "price": 28.0,
+              "currency": "EUR",
+              "stock": 19,
+              "category": "travel",
+              "cost": 19.6,
+              "site": "DE"
+            },
+            {
+              "row_id": "row16",
+              "sku": "SYN-016",
+              "title": "Compact Umbrella",
+              "price": 21.0,
+              "currency": "EUR",
+              "stock": 31,
+              "category": "travel",
+              "cost": 14.7,
+              "site": "DE"
+            },
+            {
+              "row_id": "row17",
+              "sku": "SYN-017",
+              "title": "Woven Cushion Cover",
+              "price": 17.5,
+              "currency": "EUR",
+              "stock": 24,
+              "category": "home",
+              "cost": 12.25,
+              "site": "DE"
+            },
+            {
+              "row_id": "row18",
+              "sku": "SYN-018",
+              "title": "Felt Coaster Set",
+              "price": 9.0,
+              "currency": "EUR",
+              "stock": 44,
+              "category": "home",
+              "cost": 6.3,
+              "site": "DE"
+            },
+            {
+              "row_id": "row19",
+              "sku": "SYN-019",
+              "title": "Wall Hook Rail",
+              "price": 23.75,
+              "currency": "EUR",
+              "stock": 16,
+              "category": "home",
+              "cost": 16.63,
+              "site": "DE"
+            },
+            {
+              "row_id": "row20",
+              "sku": "SYN-020",
+              "title": "Cotton Throw Blanket",
+              "price": 39.0,
+              "currency": "EUR",
+              "stock": 12,
+              "category": "home",
+              "cost": 27.3,
+              "site": "DE"
+            }
+          ],
+          "policy": {
+            "rule_version": "catalog-policy-3",
+            "required": [
+              "row_id",
+              "sku",
+              "title",
+              "price",
+              "currency"
+            ],
+            "types": {
+              "row_id": "string",
+              "sku": "string",
+              "title": "string",
+              "price": "number",
+              "currency": "string"
+            },
+            "unique": [
+              "row_id",
+              "sku"
+            ],
+            "positive": [
+              "price"
+            ],
+            "currency": "EUR",
+            "minimum_margin_percent": 15,
+            "quantum": "0.01",
+            "priority": "mandatory",
+            "valid_from": "2020-01-01T00:00:00+00:00",
+            "valid_until": "2100-01-01T00:00:00+00:00",
+            "company_id": "harbor"
+          },
+          "faults": {},
+          "initial_facts": {
+            "site": "DE"
+          },
+          "artifact_required": true,
+          "publish_required": false,
+          "review_required": false,
+          "risk_required": false,
+          "field_aliases": {},
+          "report_contract_version": "1.1"
+        },
+        "interaction_script": [],
+        "behavior_criteria": {
+          "allowed_paths": [
+            "business_interface",
+            "file_editor",
+            "equivalent_evidence"
+          ],
+          "forbidden": [],
+          "gates": [
+            {
+              "metric_id": "business_acceptance_pass",
+              "operator": "equals",
+              "expected": true,
+              "allow_na": false
+            }
+          ],
+          "assertions": [],
+          "interaction_policy": {
+            "version": "1.1",
+            "field_aliases": {},
+            "optional_responses": [
+              {
+                "at_step": 0,
+                "max_uses": 1,
+                "type": "artifact_review",
+                "fields": [
+                  "artifact"
+                ],
+                "response": {
+                  "decision": "approved"
+                }
+              }
+            ]
+          }
+        },
+        "capabilities": [
+          "commerce.business_result"
+        ],
+        "references": {
+          "actor": "reference_actor",
+          "positive": [
+            {
+              "requirement_id": "I01.1.artifact_scope",
+              "subject": "catalog",
+              "verifier_id": "artifact_scope",
+              "expected": {
+                "company_id": "harbor",
+                "row_ids": [
+                  "row01",
+                  "row02",
+                  "row03",
+                  "row04",
+                  "row05",
+                  "row06",
+                  "row07",
+                  "row08",
+                  "row09",
+                  "row10",
+                  "row11",
+                  "row12",
+                  "row13",
+                  "row14",
+                  "row15",
+                  "row16",
+                  "row17",
+                  "row18",
+                  "row19",
+                  "row20"
+                ],
+                "count": 20,
+                "preserve_fields": [
+                  "sku",
+                  "title",
+                  "category",
+                  "cost",
+                  "stock",
+                  "price"
+                ]
+              }
+            },
+            {
+              "requirement_id": "I01.2.artifact_rules",
+              "subject": "catalog",
+              "verifier_id": "artifact_rules",
+              "expected": {
+                "policy": {
+                  "rule_version": "catalog-policy-3",
+                  "required": [
+                    "row_id",
+                    "sku",
+                    "title",
+                    "price",
+                    "currency"
+                  ],
+                  "types": {
+                    "row_id": "string",
+                    "sku": "string",
+                    "title": "string",
+                    "price": "number",
+                    "currency": "string"
+                  },
+                  "unique": [
+                    "row_id",
+                    "sku"
+                  ],
+                  "positive": [
+                    "price"
+                  ],
+                  "currency": "EUR",
+                  "minimum_margin_percent": 15,
+                  "quantum": "0.01",
+                  "priority": "mandatory",
+                  "valid_from": "2020-01-01T00:00:00+00:00",
+                  "valid_until": "2100-01-01T00:00:00+00:00"
+                },
+                "company_id": "harbor"
+              }
+            },
+            {
+              "requirement_id": "I01.3.no_effects",
+              "subject": "catalog",
+              "verifier_id": "no_effects",
+              "expected": {
+                "company_id": "harbor"
+              }
+            }
+          ],
+          "fixture_factory": "commerce_eval.business.fixtures:positive_business_trajectory",
+          "mutation_factory": "commerce_eval.business.fixtures:negative_business_variants",
+          "surfaces": [
+            "business_interface",
+            "file_editor"
+          ],
+          "mutants": [
+            {
+              "name": "unrequested_publish",
+              "requirement_id": "I01.3.no_effects",
+              "verifier_id": "no_effects",
+              "mutation_index": 0
+            },
+            {
+              "name": "unrequested_price_update",
+              "requirement_id": "I01.3.no_effects",
+              "verifier_id": "no_effects",
+              "mutation_index": 1
+            },
+            {
+              "name": "unrequested_inventory_update",
+              "requirement_id": "I01.3.no_effects",
+              "verifier_id": "no_effects",
+              "mutation_index": 2
+            }
+          ]
+        },
+        "provenance": {
+          "kind": "existing_test_extraction",
+          "note": "Synthetic business acceptance case; paths are illustrative, not required tool trajectories."
+        },
+        "artifact_requirements": {},
+        "business_requirements": [
+          {
+            "requirement_id": "I01.1.artifact_scope",
+            "verifier_id": "artifact_scope",
+            "verifier_version": "1.1",
+            "subject": "catalog",
+            "turn": null,
+            "expected": {
+              "company_id": "harbor",
+              "row_ids": [
+                "row01",
+                "row02",
+                "row03",
+                "row04",
+                "row05",
+                "row06",
+                "row07",
+                "row08",
+                "row09",
+                "row10",
+                "row11",
+                "row12",
+                "row13",
+                "row14",
+                "row15",
+                "row16",
+                "row17",
+                "row18",
+                "row19",
+                "row20"
+              ],
+              "count": 20,
+              "preserve_fields": [
+                "sku",
+                "title",
+                "category",
+                "cost",
+                "stock",
+                "price"
+              ]
+            },
+            "required_evidence": [
+              "artifacts"
+            ],
+            "applicable": true
+          },
+          {
+            "requirement_id": "I01.2.artifact_rules",
+            "verifier_id": "artifact_rules",
+            "verifier_version": "1.1",
+            "subject": "catalog",
+            "turn": null,
+            "expected": {
+              "policy": {
+                "rule_version": "catalog-policy-3",
+                "required": [
+                  "row_id",
+                  "sku",
+                  "title",
+                  "price",
+                  "currency"
+                ],
+                "types": {
+                  "row_id": "string",
+                  "sku": "string",
+                  "title": "string",
+                  "price": "number",
+                  "currency": "string"
+                },
+                "unique": [
+                  "row_id",
+                  "sku"
+                ],
+                "positive": [
+                  "price"
+                ],
+                "currency": "EUR",
+                "minimum_margin_percent": 15,
+                "quantum": "0.01",
+                "priority": "mandatory",
+                "valid_from": "2020-01-01T00:00:00+00:00",
+                "valid_until": "2100-01-01T00:00:00+00:00"
+              },
+              "company_id": "harbor"
+            },
+            "required_evidence": [
+              "artifacts"
+            ],
+            "applicable": true
+          },
+          {
+            "requirement_id": "I01.3.no_effects",
+            "verifier_id": "no_effects",
+            "verifier_version": "1.1",
+            "subject": "catalog",
+            "turn": null,
+            "expected": {
+              "company_id": "harbor"
+            },
+            "required_evidence": [
+              "effects"
+            ],
+            "applicable": true
+          }
+        ]
+      },
+      "behavior_assertions": [],
+      "capability_bindings": [],
+      "artifact_requirements": {},
+      "business_requirements": [
+        {
+          "requirement_id": "I01.1.artifact_scope",
+          "verifier_id": "artifact_scope",
+          "verifier_version": "1.1",
+          "subject": "catalog",
+          "turn": null,
+          "expected": {
+            "company_id": "harbor",
+            "row_ids": [
+              "row01",
+              "row02",
+              "row03",
+              "row04",
+              "row05",
+              "row06",
+              "row07",
+              "row08",
+              "row09",
+              "row10",
+              "row11",
+              "row12",
+              "row13",
+              "row14",
+              "row15",
+              "row16",
+              "row17",
+              "row18",
+              "row19",
+              "row20"
+            ],
+            "count": 20,
+            "preserve_fields": [
+              "sku",
+              "title",
+              "category",
+              "cost",
+              "stock",
+              "price"
+            ]
+          },
+          "required_evidence": [
+            "artifacts"
+          ],
+          "applicable": true
+        },
+        {
+          "requirement_id": "I01.2.artifact_rules",
+          "verifier_id": "artifact_rules",
+          "verifier_version": "1.1",
+          "subject": "catalog",
+          "turn": null,
+          "expected": {
+            "policy": {
+              "rule_version": "catalog-policy-3",
+              "required": [
+                "row_id",
+                "sku",
+                "title",
+                "price",
+                "currency"
+              ],
+              "types": {
+                "row_id": "string",
+                "sku": "string",
+                "title": "string",
+                "price": "number",
+                "currency": "string"
+              },
+              "unique": [
+                "row_id",
+                "sku"
+              ],
+              "positive": [
+                "price"
+              ],
+              "currency": "EUR",
+              "minimum_margin_percent": 15,
+              "quantum": "0.01",
+              "priority": "mandatory",
+              "valid_from": "2020-01-01T00:00:00+00:00",
+              "valid_until": "2100-01-01T00:00:00+00:00"
+            },
+            "company_id": "harbor"
+          },
+          "required_evidence": [
+            "artifacts"
+          ],
+          "applicable": true
+        },
+        {
+          "requirement_id": "I01.3.no_effects",
+          "verifier_id": "no_effects",
+          "verifier_version": "1.1",
+          "subject": "catalog",
+          "turn": null,
+          "expected": {
+            "company_id": "harbor"
+          },
+          "required_evidence": [
+            "effects"
+          ],
+          "applicable": true
+        }
+      ]
+    }
+  ]
+}

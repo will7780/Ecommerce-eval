@@ -1,0 +1,4 @@
+interface:
+  display_name: "E-commerce Eval Onboarding"
+  short_description: "Design evidence-backed commerce evaluation onboarding"
+  default_prompt: "Use $ecommerce-eval-onboarding to inspect my product, pause for confirmation of one main workflow and answer-changing rules, then prepare an offline-validated evaluation handoff in my language without changing or running my Agent."

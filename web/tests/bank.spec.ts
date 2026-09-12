@@ -1,0 +1,74 @@
+import { expect, test } from "@playwright/test";
+
+test("32-case reference bank is usable and cannot masquerade as Agent scores", async ({ page, request }, testInfo) => {
+  const project = `bank-${testInfo.project.name}-${Date.now()}`;
+  await request.post("/api/v1/projects", { data: { project_id: project, name: "Standard bank browser test" } });
+  await page.addInitScript(p => localStorage.setItem("commerce-eval-project", p), project);
+  await page.goto("/onboarding?mode=demo&bank_version=0.2.0");
+  await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page.getByRole("radio", { name: /^Reference traces/ }).check();
+  for (let i = 0; i < 3; i++) await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await expect(page.locator(".direction-group")).toHaveCount(8);
+  await expect(page.locator(".selection-total")).toContainText("32 / 32");
+  await page.screenshot({ path: testInfo.outputPath("bank-directions.png"), fullPage: true });
+  for (let i = 0; i < 2; i++) await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page.getByLabel("I confirm this configuration and sanitized data.").check();
+  await page.getByRole("button", { name: "Confirm", exact: true }).click();
+  await expect(page).toHaveURL(/experiments/);
+  const row = page.getByRole("row").filter({ hasText: "Standard bank reference traces" });
+  await expect(row).toContainText("32/32", { timeout: 30000 });
+  await expect(row).toContainText("0 pass");
+  await row.getByTitle("View traces").click();
+  await expect(page.getByRole("row")).toHaveCount(33);
+  const traceRow = page.getByRole("row").filter({ hasText: "public-A01" });
+  await traceRow.getByTitle("View run").click();
+  await expect(page.locator(".reference-banner")).toContainText("not an Agent score");
+  await page.getByRole("tab", { name: "Evidence", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Artifact checks & review" })).toBeVisible();
+  await page.locator(".data-disclosure").filter({ hasText: "artifact.check" }).first().locator("summary").click();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
+  await page.screenshot({ path: testInfo.outputPath("artifact-evidence.png"), fullPage: true });
+});
+
+test("registered target onboarding compiles a selected bank without launching the target", async ({ page, request }) => {
+  await page.addInitScript(() => localStorage.setItem("commerce-eval-project", "commerce-demo"));
+  await page.goto("/onboarding?bank_version=0.2.0");
+  await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page.getByRole("button", { name: "Registered target", exact: true }).click();
+  await page.getByRole("combobox", { name: "Target", exact: true }).selectOption({ label: "Offline fixture agent · 1.0.0 · python" });
+  for (let i = 0; i < 4; i++) await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page.getByRole("button", { name: "Check connection" }).click();
+  await expect(page.locator(".wizard-section .json-view")).toContainText('"executed": false');
+  await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page.getByLabel("I confirm this configuration and sanitized data.").check();
+  await page.getByRole("button", { name: "Confirm", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Saved", exact: true })).toBeVisible();
+  const result = await (await request.get("/api/v1/datasets?project_id=commerce-demo")).json();
+  expect(result.items.some((item: { dataset_id: string; case_count: number }) => item.dataset_id.startsWith("onboarding-") && item.case_count === 32)).toBeTruthy();
+});
+test("independent policy baseline is explicitly graded and labelled without a model call", async ({ page, request }) => {
+  const project = `policy-${Date.now()}`;
+  await request.post("/api/v1/projects", { data: { project_id: project, name: "Policy baseline" } });
+  await page.addInitScript(p => localStorage.setItem("commerce-eval-project", p), project);
+  await page.goto("/onboarding?mode=demo&bank_version=0.2.0");
+  for (let i = 0; i < 4; i++) await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page.getByLabel("All 32 scenarios", { exact: true }).uncheck();
+  for (const id of ["A01", "S02"]) await page.locator(".direction-group label").filter({ hasText: id }).locator("input").check();
+  for (let i = 0; i < 2; i++) await page.getByRole("button", { name: "Continue", exact: true }).click();
+  await page.getByLabel("I confirm this configuration and sanitized data.").check();
+  await page.getByRole("button", { name: "Confirm", exact: true }).click();
+  const row = page.getByRole("row").filter({ hasText: "Standard bank policy evaluation" });
+  await expect(row).toContainText("2/2", { timeout: 30000 });
+  const records = await (await request.get(`/api/v1/traces?project_id=${project}`)).json();
+  expect(records.items).toHaveLength(2);
+  const detail = await (await request.get(`/api/v1/traces/${records.items[0].trace_id}`)).json();
+  expect(detail.trace.metadata.actor).toBe("reference_policy");
+  expect(detail.trace.metadata.reference_fixture).toBe(false);
+  expect(detail.trace.resource_usage.agent_llm_calls).toBe(0);
+  expect(detail.evaluation_history).toHaveLength(1);
+  await page.goto(`/traces/${records.items[0].trace_id}`);
+  await expect(page.locator(".reference-banner")).toContainText("rule-based candidate");
+  await page.getByRole("tab", { name: "Metrics", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Evaluation history", exact: true })).toBeVisible();
+});
+

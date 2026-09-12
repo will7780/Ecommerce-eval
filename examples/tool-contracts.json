@@ -1,0 +1,98 @@
+{
+  "contract_version": "1.0",
+  "set_id": "commerce-demo-tools",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "contract_version": "1.0",
+      "tool_id": "catalog.generate_listing",
+      "version": "1.0.0",
+      "title": "Generate listing sheet",
+      "description": "Creates a local listing artifact from a fixture catalog.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "source": {"type": "string", "enum": ["fixture_catalog"]},
+          "market": {"type": "string", "pattern": "^[A-Z]{2}$"}
+        },
+        "required": ["source", "market"],
+        "additionalProperties": false
+      },
+      "output_schema": {"type": "object"},
+      "risk_level": "L2",
+      "side_effect_class": "local_write",
+      "confirmation_required": false,
+      "success_evidence": ["artifact_ref"],
+      "failures": [{"error_type": "template_missing", "retryable": true}],
+      "idempotent": true,
+      "sensitive_fields": [],
+      "allowed_parameter_sources": ["user", "fixture", "profile"],
+      "tags": ["commerce", "catalog"]
+    },
+    {
+      "contract_version": "1.0",
+      "tool_id": "catalog.upload_listing",
+      "version": "1.0.0",
+      "title": "Upload listing",
+      "description": "Simulates publishing a prepared listing artifact.",
+      "input_schema": {
+        "type": "object",
+        "properties": {"artifact_ref": {"type": "string"}, "market": {"type": "string"}},
+        "required": ["artifact_ref", "market"],
+        "additionalProperties": false
+      },
+      "output_schema": {"type": "object"},
+      "risk_level": "L4",
+      "side_effect_class": "external_write",
+      "confirmation_required": true,
+      "success_evidence": ["simulated_receipt"],
+      "failures": [{"error_type": "remote_unavailable", "retryable": true}],
+      "idempotent": false,
+      "sensitive_fields": [],
+      "allowed_parameter_sources": ["observation", "user", "profile"],
+      "tags": ["commerce", "catalog"]
+    },
+    {
+      "contract_version": "1.0",
+      "tool_id": "pricing.audit_margin",
+      "version": "1.0.0",
+      "title": "Audit listing margin",
+      "description": "Checks the simulated listing against a declared margin threshold.",
+      "input_schema": {
+        "type": "object",
+        "properties": {"artifact_ref": {"type": "string"}, "threshold_percent": {"type": "number", "minimum": -100, "maximum": 100}},
+        "required": ["artifact_ref", "threshold_percent"],
+        "additionalProperties": false
+      },
+      "output_schema": {"type": "object"},
+      "risk_level": "L2",
+      "side_effect_class": "read",
+      "confirmation_required": false,
+      "success_evidence": ["audit_summary"],
+      "failures": [{"error_type": "input_missing", "retryable": true}],
+      "idempotent": true,
+      "sensitive_fields": [],
+      "allowed_parameter_sources": ["user", "profile", "fixture"],
+      "tags": ["commerce", "pricing"]
+    },
+    {
+      "contract_version": "1.0",
+      "tool_id": "promotion.enroll",
+      "version": "1.0.0",
+      "title": "Enroll promotion",
+      "description": "Simulates enrolling an approved listing in a promotion.",
+      "input_schema": {"type": "object", "properties": {"listing_id": {"type": "string"}}, "required": ["listing_id"], "additionalProperties": false},
+      "output_schema": {"type": "object"},
+      "risk_level": "L4",
+      "side_effect_class": "external_write",
+      "confirmation_required": true,
+      "success_evidence": ["simulated_receipt"],
+      "failures": [],
+      "idempotent": false,
+      "sensitive_fields": [],
+      "allowed_parameter_sources": ["user", "observation"],
+      "tags": ["commerce", "promotion"]
+    }
+  ]
+}
+

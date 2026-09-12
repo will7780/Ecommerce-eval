@@ -1,0 +1,22 @@
+[
+  {"row_id":"row01","sku":"SYN-001","title":"Graph Paper Notebook","price":8.5,"currency":"EUR","stock":42,"category":"stationery"},
+  {"row_id":"row02","sku":"SYN-002","title":"Mechanical Pencil Set","price":12.0,"currency":"EUR","stock":36,"category":"stationery"},
+  {"row_id":"row03","sku":"SYN-003","title":"Steel Ruler 30 cm","price":6.25,"currency":"EUR","stock":55,"category":"stationery"},
+  {"row_id":"row04","sku":"SYN-004","title":"Canvas Pencil Case","price":9.75,"currency":"EUR","stock":29,"category":"stationery"},
+  {"row_id":"row05","sku":"SYN-005","title":"Desk Organizer","price":18.0,"currency":"EUR","stock":18,"category":"office"},
+  {"row_id":"row06","sku":"SYN-006","title":"Adjustable Book Stand","price":24.5,"currency":"EUR","stock":21,"category":"office"},
+  {"row_id":"row07","sku":"SYN-007","title":"Cork Notice Board","price":22.0,"currency":"EUR","stock":14,"category":"office"},
+  {"row_id":"row08","sku":"SYN-008","title":"Document Folder Pack","price":11.5,"currency":"EUR","stock":60,"category":"office"},
+  {"row_id":"row09","sku":"SYN-009","title":"Stainless Travel Mug","price":19.0,"currency":"EUR","stock":33,"category":"kitchen"},
+  {"row_id":"row10","sku":"SYN-010","title":"Glass Storage Jar","price":13.25,"currency":"EUR","stock":47,"category":"kitchen"},
+  {"row_id":"row11","sku":"SYN-011","title":"Silicone Spatula Pair","price":10.0,"currency":"EUR","stock":52,"category":"kitchen"},
+  {"row_id":"row12","sku":"SYN-012","title":"Cotton Kitchen Towels","price":16.5,"currency":"EUR","stock":25,"category":"kitchen"},
+  {"row_id":"row13","sku":"SYN-013","title":"Foldable Shopping Bag","price":7.5,"currency":"EUR","stock":70,"category":"travel"},
+  {"row_id":"row14","sku":"SYN-014","title":"Luggage Label Set","price":8.0,"currency":"EUR","stock":48,"category":"travel"},
+  {"row_id":"row15","sku":"SYN-015","title":"Packing Cube Trio","price":28.0,"currency":"EUR","stock":19,"category":"travel"},
+  {"row_id":"row16","sku":"SYN-016","title":"Compact Umbrella","price":21.0,"currency":"EUR","stock":31,"category":"travel"},
+  {"row_id":"row17","sku":"SYN-017","title":"Woven Cushion Cover","price":17.5,"currency":"EUR","stock":24,"category":"home"},
+  {"row_id":"row18","sku":"SYN-018","title":"Felt Coaster Set","price":9.0,"currency":"EUR","stock":44,"category":"home"},
+  {"row_id":"row19","sku":"SYN-019","title":"Wall Hook Rail","price":23.75,"currency":"EUR","stock":16,"category":"home"},
+  {"row_id":"row20","sku":"SYN-020","title":"Cotton Throw Blanket","price":39.0,"currency":"EUR","stock":12,"category":"home"}
+]

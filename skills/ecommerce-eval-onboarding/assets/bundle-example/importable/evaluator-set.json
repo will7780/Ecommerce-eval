@@ -1,0 +1,7 @@
+{
+  "set_id": "business-only",
+  "version": "1",
+  "metric_ids": [
+    "business_acceptance_pass"
+  ]
+}

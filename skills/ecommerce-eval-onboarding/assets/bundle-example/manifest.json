@@ -1,0 +1,52 @@
+{
+  "bundle_version": "0.1.0",
+  "project_id": "synthetic-onboarding",
+  "main_workflow": {
+    "id": "preview-only",
+    "confirmed": true,
+    "source_refs": [
+      "assessment.md#synthetic-scenario"
+    ]
+  },
+  "resources": [
+    {
+      "path": "importable/tool-contracts.json",
+      "kind": "tool-contracts",
+      "id": "preview-tools",
+      "version": "1",
+      "sha256": "22133c82337d14daa90eb75bc7e3fed4bc9279f9bd8ea0c813698fd96e10645a",
+      "order": 1,
+      "depends_on": []
+    },
+    {
+      "path": "importable/evaluator-set.json",
+      "kind": "evaluator-set",
+      "id": "business-only",
+      "version": "1",
+      "sha256": "9b872313df0f55f702da940238a5c401c8c34e5924410b4605a897d60aae46b9",
+      "order": 2,
+      "depends_on": []
+    },
+    {
+      "path": "importable/dataset.json",
+      "kind": "dataset",
+      "id": "preview-exam",
+      "version": "1",
+      "sha256": "f166c7d2c333a0779472c33803024a6248080b89ce35c18094c22ef6437eba84",
+      "order": 3,
+      "depends_on": [
+        "importable/tool-contracts.json",
+        "importable/evaluator-set.json"
+      ]
+    }
+  ],
+  "rule_checks": [
+    {
+      "dataset_id": "preview-exam",
+      "dataset_version": "1",
+      "case_id": "preview-normal",
+      "profile_case_id": "I01",
+      "profile_bank_version": "0.3.1"
+    }
+  ]
+}

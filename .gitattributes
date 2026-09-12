@@ -1,0 +1,3 @@
+# Preserve exported checksums and immutable fixture bytes across operating systems.
+* -text
+*.png binary

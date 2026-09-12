@@ -1,0 +1,2 @@
+# Preserve the bytes covered by the example manifest across Windows checkouts.
+assets/bundle-example/** -text
