@@ -43,6 +43,7 @@ def is_public(relative: Path) -> bool:
             (len(parts) == 2 and relative.suffix == ".md")
             or (len(parts) == 3 and parts[1] == "design" and relative.name in PUBLIC_DESIGNS)
             or (len(parts) == 4 and parts[1:3] == ("assets", "readme") and relative.suffix == ".png")
+            or relative.as_posix() == "docs/assets/readme/banner.svg"
         )
     if first == ".github":
         return len(parts) == 3 and parts[1] == "workflows" and relative.suffix in {".yml", ".yaml"}

@@ -1,38 +1,43 @@
-# E-commerce Eval
+<p align="center">
+  <img src="docs/assets/readme/banner.svg" width="1000" alt="E-commerce Eval">
+</p>
 
-**面向电商日常运营任务的 Agent 业务验收平台。**
+<p align="center"><strong>面向电商日常运营任务的 Agent 业务验收平台</strong></p>
+<p align="center">一套业务验收标准 · 多种执行方式 · 多种证据接入</p>
 
-E-commerce Eval 源于开发者在 **Amazon、Temu、AliExpress 多平台的商品运营与进销存实践**，结合 **100 万+ SKU 的管理经验**，构建面向电商运营垂类 Agent 的测评体系。
+<p align="center">
+  <strong>简体中文</strong> · <a href="README.en.md">English</a>
+</p>
 
-**如果你的 Agent 用来管理海量商品，处理上品、部分核价场景、库存管理等日常运营任务，E-commerce Eval 可以帮助你设计考题、核验结果、定位问题。**
+<p align="center">
+  <a href="https://github.com/will7780/commerce-agent-eval/actions/workflows/ci.yml"><img src="https://github.com/will7780/commerce-agent-eval/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-16806A?style=flat" alt="License: MIT"></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-3572A5?style=flat" alt="Python: 3.10+"></a>
+  <a href="#limits"><img src="https://img.shields.io/badge/Status-Alpha-D69E36?style=flat" alt="Status: Alpha"></a>
+</p>
 
-**一套业务验收标准，多种执行方式，多种证据接入。** 不论你的 Agent 使用封装好的功能级 Tool，还是文件读写等基础工具，我们关注的都是最终的运营结果，而不是要求所有 Agent 采用相同的工具或操作步骤。
+<p align="center">
+  <a href="#quickstart">快速体验</a> ·
+  <a href="#example">看一个案例</a> ·
+  <a href="#bank">32 道启动考题</a> ·
+  <a href="#skill">为自己的 Agent 出题</a> ·
+  <a href="#docs">文档</a>
+</p>
 
-Agent 说“上传成功”，不代表商品数据正确，也不代表上传的是用户审核过的版本。
-E-commerce Eval 根据**业务条件和可核验证据**判断结果，提供 **32 道电商启动考题、可视化诊断平台，以及帮助你设计专属考题的 Onboarding Skill**。
+---
 
-[快速体验](#quickstart) · [看一个案例](#example) · [为自己的 Agent 出题](#skill) · [文档](#docs) · [English](README.en.md)
+E-commerce Eval 源于开发者在 Amazon、Temu、AliExpress 多平台的商品运营与进销存实践，结合 **100 万+ SKU 的管理经验**，构建电商运营垂类 Agent 的测评体系。
 
-**本地优先 · MIT · Python 3.10+ · Alpha / 0.3.0rc2**
+如果你的 Agent 用来管理海量商品，处理上品、部分核价场景、库存管理等日常任务，这里可以帮助你**设计考题、核验结果、定位问题**。功能级 Tool 和文件读写等基础工具都可以接入；我们关注最终运营结果，不要求所有 Agent 采用相同工具或操作步骤。
 
-![业务验收详情：旧版审核不能授权修改后的产物](docs/assets/readme/acceptance-zh.png)
+- **[电商启动题库](#bank)**：八个方向、32 道题，覆盖意图、公司规则、产物审核、失败恢复等关键约束。
+- **[可视化业务验收](#example)**：从未通过的条件钻取到文件、审核版本和执行回执，区分违规与缺证据。
+- **[Onboarding Skill](#skill)**：调查你的产品，为一条主流程设计专属考题，列出证据缺口和可导入文件。
 
-*匿名评分器验证材料，非真实模型考试成绩。安全阻断、业务违规和证据缺失分别展示；无 Key 演示不会调用真实模型或写入真实店铺。*
+> **“上传成功”，不等于业务验收通过。**
+> 商品数据是否正确？上传的是否为用户审核过的版本？答案要由业务条件和可核验证据给出。
 
-## 为什么需要业务验收
-
-工具返回 `success=true` 是一条线索，不是验收结论。
-
-| 用户要的结果 | 平台需要核验的事实 |
-| --- | --- |
-| 只生成商品预览 | 产物包含要求的商品，而且完整副作用记录中没有发布行为 |
-| 按公司规则定价 | 币种、字段和实际价格正确；利润率按规则从售价与成本复算 |
-| 审核后再发布 | 审核覆盖最终版本，实际消费内容与审核的内容及文件清单一致 |
-| 失败后合理恢复 | 根据反馈处理失败项或先查询未知状态，并如实报告结果 |
-
-业务接口型 Agent 可以调用封装好的生成、发布接口；文件编辑型 Agent 可以通过读取、修改文件和请求测试后台完成同一任务。**业务条件相同，就用同一套标准；不因两次与八次工具调用直接判定谁更好。**
-
-具体接入仍需工具测试后端与证据采集能力。框架无关不等于任意 Agent 无需适配即可运行完整题库。
+本地优先；无 Key 演示不调用真实模型，也不写入真实店铺。具体接入仍需测试环境与证据采集，框架无关不等于免适配。
 
 <a id="quickstart"></a>
 ## 快速体验：不需要 API Key
@@ -52,12 +57,15 @@ Windows PowerShell：
 .\.venv\Scripts\commerce-eval.exe demo
 ```
 
-macOS / Linux：
+<details>
+<summary>macOS / Linux 安装命令</summary>
 
 ```bash
 .venv/bin/python -m pip install -e .
 .venv/bin/commerce-eval demo
 ```
+
+</details>
 
 打开 [http://127.0.0.1:8770](http://127.0.0.1:8770)，选择演示项目。按 `Ctrl+C` 停止服务。
 
@@ -67,13 +75,16 @@ macOS / Linux：
 
 `demo` 会初始化演示数据并启动服务，**不会自动让真实模型参加 32 道考试**。旧示例、参考轨迹和真实模型实验有不同含义，不能混算为模型通过率。
 
-需要独立数据库或其他端口：
+<details>
+<summary>使用独立数据库或其他端口</summary>
 
 ```bash
 commerce-eval --database ./demo.db demo --port 8771
 ```
 
 上面的简写命令需先激活虚拟环境；也可以继续使用对应系统的完整可执行文件路径。数据库按版本保留记录，不覆盖已有实验成绩。
+
+</details>
 
 <a id="example"></a>
 ## 一个案例：审核后，文件变了
@@ -91,11 +102,14 @@ commerce-eval --database ./demo.db demo --port 8771
 | 仍以 v1 审核执行了 v2 | 不通过：已证实违反版本审核约束 |
 | 缺少必要的消费记录或完整副作用台账 | 无法核验：不当作通过，也不冒充已证实违规 |
 
+![业务验收详情：旧版审核不能授权修改后的产物](docs/assets/readme/acceptance-zh.png)
+
+*图中为已证实违规的匿名评分器验证材料，并非真实模型考试成绩。可从条件结论钻取到审核版本、消费记录和对应证据。*
+
 [复现这组三态示例与拍摄步骤](docs/README_MEDIA.md)。短视频尚待录制；当前截图来自离线评分器验证材料，不是剪辑后的真实模型成绩。
 
-## 自带什么考试题
-
-![八方向题库及可展开的业务条件](docs/assets/readme/bank-zh.png)
+<a id="bank"></a>
+## 八个方向，32 道启动考题
 
 默认题库 **0.3.1** 有八个方向，每个四题。它是启动题库，不是完整行业基准，也不是所有公司的统一制度。
 
@@ -109,6 +123,13 @@ commerce-eval --database ./demo.db demo --port 8771
 | 多轮连续性 | 保留补充信息，采用最新纠正，不重放旧任务 |
 | 失败恢复与结果诚实 | 部分成功只处理失败项；超时不明先查状态 |
 | 权限、效率与成本 | 拒绝后零执行、批准不重复执行、预算与未知费用 |
+
+<details>
+<summary>查看题库页面与一道题的业务条件</summary>
+
+![八方向题库及可展开的业务条件](docs/assets/readme/bank-zh.png)
+
+</details>
 
 公司规则和用户允许访问的资料可以进入考生上下文；**参考答案、预埋错误标注、未来用户回答和故障脚本留在评测侧**。
 
@@ -153,17 +174,28 @@ npx skills add will7780/commerce-agent-eval --skill ecommerce-eval-onboarding --
 本轮不要修改我的 Agent、访问密钥、注册 Target、导入实际项目或运行考试。
 ```
 
+交付物包括产品调查、八方向适用矩阵、Dataset / Tool Contract / Evaluator Set 草案、证据缺口、文件清单与校验报告。校验助手复用平台真实导入服务，在临时数据库中运行。
+
+<details>
+<summary>查看 Skill 交付物：考点、证据缺口与可导入文件</summary>
+
 ![Skill 匿名交付示例：可导入资源与尚未就绪的证据](docs/assets/readme/skill-zh.png)
 
 *实际同仓库示例文件与离线校验报告的文档展示，不是伪造的 Codex 对话。*
 
-交付物包括产品调查、八方向适用矩阵、Dataset / Tool Contract / Evaluator Set 草案、证据缺口、文件清单与校验报告。校验助手复用平台真实导入服务，在临时数据库中运行。
+</details>
 
 **可导入 ≠ 已接通 ≠ 已通过业务验收。** Skill 首版不实现适配器、不补运行时采集、不自动修改 Agent，也不执行考试。自定义题目的 Schema 合法，不代表其评分规则已经验证。
 
 [使用与安装说明](docs/ONBOARDING_SKILL.md) · [Skill 入口](skills/ecommerce-eval-onboarding/SKILL.md)
 
+<a id="limits"></a>
 ## 判分依据与当前边界
+
+当前为 **Alpha / 0.3.0rc2**。业务条件相同，就用同一套标准；两次和八次工具调用本身不决定优劣。
+
+<details>
+<summary>证据要求、适用范围与安全边界</summary>
 
 - **通过**：适用条件有充分证据支持；**不通过**：证据证明违规或结果错误。
 - **无法核验**：必要证据缺失；**N/A**：条件明确不适用。两者不能混用。
@@ -173,6 +205,8 @@ npx skills add will7780/commerce-agent-eval --skill ecommerce-eval-onboarding --
 - System / User 等角色按实际采集展示；缺失的历史输入不补造，不保存隐藏思维链。
 - 未返回的 Token / 费用保持未知；使用外部模型会向所选 Provider 发送必要输入，**本地优先不代表模型请求永不出机**。
 - 当前是 Alpha 候选版；尚无通用浏览器适配和免改造接入保证，本地子进程也不等于安全沙箱。工程测试通过率不是生产业务成功率。
+
+</details>
 
 <a id="docs"></a>
 ## 文档与贡献

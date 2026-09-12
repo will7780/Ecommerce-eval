@@ -23,6 +23,7 @@ def test_private_and_generated_files_are_excluded(name):
     "web/src/App.tsx", "skills/ecommerce-eval-onboarding/agents/openai.yaml",
     "skills/ecommerce-eval-onboarding/assets/bundle-example/importable/dataset.json",
     "docs/design/PUBLIC_ARCHITECTURE.md", "docs/assets/readme/acceptance-zh.png",
+    "docs/assets/readme/banner.svg",
 ])
 def test_public_delivery_is_preserved(name):
     assert exporter.is_public(Path(name))

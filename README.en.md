@@ -1,52 +1,51 @@
-# E-commerce Eval
+<p align="center">
+  <img src="docs/assets/readme/banner.svg" width="1000" alt="E-commerce Eval">
+</p>
 
-**Business acceptance testing for agents handling everyday e-commerce operations.**
+<p align="center"><strong>Business acceptance testing for everyday e-commerce agents</strong></p>
+<p align="center">One standard · Multiple execution methods · Verifiable evidence</p>
 
-E-commerce Eval draws on the developer's **product, purchasing, sales, and inventory
-operations experience across Amazon, Temu, and AliExpress**, including **managing
-more than one million SKUs**, to build an evaluation system for commerce-focused agents.
+<p align="center">
+  <a href="README.md">简体中文</a> · <strong>English</strong>
+</p>
 
-**If your agent manages large product catalogs and handles listing creation,
-selected price-audit scenarios, inventory management, or other daily operations,
-E-commerce Eval can help you design test cases, verify outcomes, and identify problems.**
+<p align="center">
+  <a href="https://github.com/will7780/commerce-agent-eval/actions/workflows/ci.yml"><img src="https://github.com/will7780/commerce-agent-eval/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-16806A?style=flat" alt="License: MIT"></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-3572A5?style=flat" alt="Python: 3.10+"></a>
+  <a href="#limits"><img src="https://img.shields.io/badge/Status-Alpha-D69E36?style=flat" alt="Status: Alpha"></a>
+</p>
 
-**One business acceptance standard. Multiple execution methods. Multiple evidence inputs.**
-Whether your agent uses packaged business-function tools or basic tools such as
-file reading and writing, the focus is the final operational outcome, not requiring
-every agent to use the same tools or follow identical steps.
+<p align="center">
+  <a href="#quickstart">Quick start</a> ·
+  <a href="#example">Worked example</a> ·
+  <a href="#bank">32 starter cases</a> ·
+  <a href="#skill">Onboarding Skill</a> ·
+  <a href="#docs">Documentation</a>
+</p>
 
-An agent saying "uploaded successfully" does not prove that the product data is correct,
-or that it published the version the user approved.
-E-commerce Eval checks **business conditions against verifiable evidence**, with
-**32 starter cases, a visual evidence inspector, and an Onboarding Skill for designing your own evaluations**.
+---
 
-[Quick start](#quickstart) · [Worked example](#example) · [Design your evaluation](#skill) · [Documentation](#docs) · [简体中文](README.md)
+Built from the developer's product, purchasing, sales and inventory operations
+experience across Amazon, Temu and AliExpress, including **managing over one
+million SKUs**, E-commerce Eval focuses on commerce-specific agent evaluation.
 
-**Local-first · MIT · Python 3.10+ · Alpha / 0.3.0rc2**
+If your agent manages large catalogs, creates listings, handles selected
+price-audit scenarios or manages inventory, use it to **design cases, verify
+outcomes and locate problems**. Packaged business tools and basic file tools can
+both participate. The focus is operational results, not identical tools or steps.
 
-![Business acceptance: an old approval cannot authorize a changed artifact](docs/assets/readme/acceptance-en.png)
+- **[Commerce starter bank](#bank)**: eight directions and 32 cases covering intent, company rules, artifact review, recovery and other critical constraints.
+- **[Visual business acceptance](#example)**: drill from a failed condition into files, approved revisions and execution receipts. Separate violations from missing evidence.
+- **[Onboarding Skill](#skill)**: investigate your product, draft cases for a primary workflow, and identify evidence gaps and importable resources.
 
-*Anonymous grader-conformance material, not real-model exam results. Correct blocking,
-proven violations and missing evidence are shown separately. The no-key demo makes
-no real-model calls or production-store writes.*
+> **"Uploaded successfully" is not business acceptance.**
+> Is the product data correct? Was the approved version actually used?
+> Business conditions and verifiable evidence determine the answer.
 
-## Why business acceptance?
-
-A tool returning `success=true` is a clue, not a verdict.
-
-| Requested outcome | Facts that must be verified |
-| --- | --- |
-| Prepare a product preview only | The artifact contains the requested products, and a complete effect journal shows no publication |
-| Price products under company policy | Currency, fields and actual prices comply; margins are recomputed from prices and costs |
-| Publish after review | Approval covers the final revision; consumed content and file manifest match that approval |
-| Recover appropriately | The agent handles failed items or checks an uncertain operation's status, then reports honestly |
-
-A business-API agent can use packaged generation and publication interfaces.
-A file-editing agent can read and change files and call a test backend.
-**The same business conditions use the same standard; two calls versus eight do not automatically determine quality.**
-
-Real integrations still need a tool-test backend and evidence collection.
-Framework-neutral does not mean that every agent can run the full bank without adaptation.
+Local-first. The no-key demo makes no real-model calls or production-store writes.
+Real integration still needs a test environment and evidence collectors;
+framework-neutral does not mean zero adaptation.
 
 <a id="quickstart"></a>
 ## Quick start: no API key
@@ -67,12 +66,15 @@ Windows PowerShell:
 .\.venv\Scripts\commerce-eval.exe demo
 ```
 
-macOS / Linux:
+<details>
+<summary>macOS / Linux commands</summary>
 
 ```bash
 .venv/bin/python -m pip install -e .
 .venv/bin/commerce-eval demo
 ```
+
+</details>
 
 Open [http://127.0.0.1:8770](http://127.0.0.1:8770) and select the demo project.
 Press `Ctrl+C` to stop the server.
@@ -84,7 +86,8 @@ Press `Ctrl+C` to stop the server.
 `demo` seeds data and starts the server. **It does not automatically run a real model through all 32 cases.**
 Legacy examples, reference trajectories and real-model experiments must not be combined into a model pass rate.
 
-To use a separate database or port:
+<details>
+<summary>Use a separate database or port</summary>
 
 ```bash
 commerce-eval --database ./demo.db demo --port 8771
@@ -92,6 +95,8 @@ commerce-eval --database ./demo.db demo --port 8771
 
 This shorthand requires an activated virtual environment; alternatively use the
 platform-specific executable path above. Versioned records preserve earlier exam results.
+
+</details>
 
 <a id="example"></a>
 ## Worked example: the file changed after approval
@@ -109,13 +114,18 @@ platform-specific executable path above. Versioned records preserve earlier exam
 | v2 was executed using v1's approval | Fail: a revision-review violation is proven |
 | Required consumption evidence or a complete effect journal is missing | Cannot verify: neither a pass nor an invented proven violation |
 
+![Business acceptance: an old approval cannot authorize a changed artifact](docs/assets/readme/acceptance-en.png)
+
+*This anonymous grader-conformance example shows a proven violation, not a
+real-model exam result. Drill from the condition into approved revisions,
+consumption records and supporting evidence.*
+
 [Reproduce these three states and prepare a recording](docs/README_MEDIA.md).
 The short video is pending recording. Current screenshots show offline grader
 conformance examples, not curated real-model performance.
 
-## What is in the starter bank?
-
-![Eight-direction starter bank and expandable business conditions](docs/assets/readme/bank-en.png)
+<a id="bank"></a>
+## Eight directions. 32 starter cases.
 
 Bank **0.3.1** contains four cases in each of eight directions. It is a starter bank,
 not a comprehensive industry benchmark or a universal company policy.
@@ -130,6 +140,13 @@ not a comprehensive industry benchmark or a universal company policy.
 | Multi-turn continuity | Retain supplied facts, apply corrections, do not replay completed tasks |
 | Recovery and honest reporting | Retry failed items only; query status after an uncertain timeout |
 | Authorization, efficiency and cost | No execution after refusal, no duplicate approval use, budgets and unknown costs |
+
+<details>
+<summary>Preview the bank and a case's business conditions</summary>
+
+![Eight-direction starter bank and expandable business conditions](docs/assets/readme/bank-en.png)
+
+</details>
 
 Company rules and permitted materials can enter candidate context.
 **Reference answers, planted-defect labels, future replies and fault scripts stay on the evaluation side.**
@@ -194,15 +211,20 @@ Do not modify my agent, access credentials, register a Target, import into a rea
 project or run an exam in this task.
 ```
 
+Deliverables include product investigation, the eight-direction applicability
+matrix, Dataset / Tool Contract / Evaluator Set drafts, evidence gaps, a manifest
+and a validation report. Helpers reuse the actual platform import service in a
+temporary database.
+
+<details>
+<summary>Preview the Skill handoff: checks, evidence gaps and importable files</summary>
+
 ![Anonymous Skill handoff: importable resources and unresolved evidence readiness](docs/assets/readme/skill-en.png)
 
 *Document view of the real repository example and its offline validation report,
 not a fabricated Codex conversation.*
 
-Deliverables include product investigation, the eight-direction applicability
-matrix, Dataset / Tool Contract / Evaluator Set drafts, evidence gaps, a manifest
-and a validation report. Helpers reuse the actual platform import service in a
-temporary database.
+</details>
 
 **Importable is not integrated, and integrated is not accepted.**
 The first Skill does not implement adapters, add runtime instrumentation, modify
@@ -211,7 +233,14 @@ that its scoring rules have been validated.
 
 [Usage and installation](docs/ONBOARDING_SKILL.md) · [Skill entry](skills/ecommerce-eval-onboarding/SKILL.md)
 
+<a id="limits"></a>
 ## Evidence and current limits
+
+Current release: **Alpha / 0.3.0rc2**. The same business conditions use the same
+standard; two calls versus eight do not automatically determine quality.
+
+<details>
+<summary>Evidence requirements, applicability and safety boundaries</summary>
 
 - **Pass** requires sufficient evidence. **Fail** means an incorrect result or violation is established.
 - **Cannot verify** means required evidence is absent. **N/A** means explicitly inapplicable. These are not interchangeable.
@@ -221,6 +250,8 @@ that its scoring rules have been validated.
 - System / User roles reflect captured inputs. Missing historical prompts are not reconstructed; hidden reasoning is not stored.
 - Missing tokens and costs remain unknown. External model use sends necessary inputs to the selected Provider; **local-first does not mean model requests never leave the machine**.
 - This is an Alpha candidate. Universal browser integration and zero-adaptation onboarding are not promised. A local subprocess is not a security sandbox. Engineering test pass rates are not production business success rates.
+
+</details>
 
 <a id="docs"></a>
 ## Documentation and contribution

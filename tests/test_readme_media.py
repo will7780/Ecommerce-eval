@@ -68,6 +68,31 @@ def test_readme_has_honest_versions_and_entry_points(readme):
     for value in ("0.3.0rc2", "0.3.1", "0.1.0", 'id="quickstart"', 'id="example"', 'id="skill"', 'id="docs"'):
         assert value in content
     assert "pip install commerce-agent-eval" not in content
-    assert "shields.io" not in content
+    assert "actions/workflows/ci.yml/badge.svg?branch=main" in content
+    assert "img.shields.io/badge/License-MIT-" in content
+    assert "img.shields.io/badge/Python-3.10%2B-" in content
+    assert "img.shields.io/badge/Status-Alpha-" in content
+    assert "shields.io/pypi/" not in content
+    assert "shields.io/github/stars/" not in content
     assert "docs/README_MEDIA.md" in content
+    assert content.index("banner.svg") < content.index('id="quickstart"')
+    assert content.index('id="example"') < content.index("assets/readme/acceptance-")
+    for anchor in ("bank", "limits"):
+        assert f'id="{anchor}"' in content
+    assert content.count("<details>") == content.count("</details>")
 
+
+def test_readme_banner_is_a_self_contained_brand_asset():
+    from xml.etree import ElementTree
+
+    content = (ROOT / "docs/assets/readme/banner.svg").read_text(encoding="utf-8")
+    root = ElementTree.fromstring(content)
+    assert root.attrib["viewBox"] == "0 0 1600 360"
+    allowed = {"svg", "title", "desc", "rect", "path", "g", "text"}
+    for element in root.iter():
+        assert element.tag.rsplit("}", 1)[-1] in allowed
+        assert not any(key.lower().startswith("on") or "href" in key.lower() for key in element.attrib)
+    assert "E-commerce Eval" in content
+    assert "ISC License" in content
+    assert "Lucide Contributors" in content
+    assert "url(" not in content

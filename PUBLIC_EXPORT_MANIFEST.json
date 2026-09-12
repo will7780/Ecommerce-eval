@@ -40,11 +40,11 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "5b7f378a97049e01c65bb8e82aaeb940cc4b4194bd260bbed0fb68d46ecee293"
+      "sha256": "aae1474d53606112def12b75b27989dd49ff3b5caaeb0e75dd3600e9160dcf93"
     },
     {
       "path": "README.md",
-      "sha256": "a70619f91bc64dfedf0d9ad838784bb10ce6e56b3cc23569e94e371ddc01a38f"
+      "sha256": "a194a19ae52a89b6e7ce34cd2ef36c8e1b17cf324b76f0c377f96dbf6ffa5896"
     },
     {
       "path": "SECURITY.md",
@@ -109,6 +109,10 @@
     {
       "path": "docs/assets/readme/bank-zh.png",
       "sha256": "f26721e4395a02f1d4904fcf4fe8051c5c67dace29027d775e0906614496bc38"
+    },
+    {
+      "path": "docs/assets/readme/banner.svg",
+      "sha256": "bd8c260b64510482ab047f344272502bb837027ea2bf8802010cc08c3ec6b6c7"
     },
     {
       "path": "docs/assets/readme/skill-en.png",
@@ -884,11 +888,11 @@
     },
     {
       "path": "tests/test_public_export.py",
-      "sha256": "228c3313e8175cc240f67816b573b2f1f7595a7746ff13f2cf4435a6b7d43f3d"
+      "sha256": "3c5b6813e3535fa044961441c3b727844097492c048d1adcf96b150c188876c6"
     },
     {
       "path": "tests/test_readme_media.py",
-      "sha256": "c5db8c46eb4313c281148620adba6f82ae252e6797fa145dcfbb8b0917a703a3"
+      "sha256": "0592449746484cebafd41ae03d3a73d38474b45adf55e0945dea97f055816f4f"
     },
     {
       "path": "tests/test_reference_evaluation_boundary.py",
@@ -920,7 +924,7 @@
     },
     {
       "path": "tools/export_public_repo.py",
-      "sha256": "92a45fc7ea696dbd0938c52ad759b5b2c9c3f541e352df4e1af59d4f118f4b7f"
+      "sha256": "b29def8f007e6fb127cc01c4acc6cd9614ebffe6e6071b0a131032d6876891dc"
     },
     {
       "path": "tools/prepare_readme_media.py",
