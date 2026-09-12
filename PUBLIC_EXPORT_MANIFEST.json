@@ -40,11 +40,11 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "aae1474d53606112def12b75b27989dd49ff3b5caaeb0e75dd3600e9160dcf93"
+      "sha256": "1a8c548c835f6e71355d2bc8dcb1242591d2d22e83fb17f65a5f48449927afd1"
     },
     {
       "path": "README.md",
-      "sha256": "a194a19ae52a89b6e7ce34cd2ef36c8e1b17cf324b76f0c377f96dbf6ffa5896"
+      "sha256": "8a5eedff6a5559d0d186f1d9b28178c40ba25d82909f46fd760544f426a55245"
     },
     {
       "path": "SECURITY.md",
@@ -80,7 +80,7 @@
     },
     {
       "path": "docs/ONBOARDING_SKILL.md",
-      "sha256": "a12fc1c628ad416e28b7f7e44e651f297a27d6a5c3e60b63cbcb8fa81f6fee49"
+      "sha256": "27fe602c21a39b231822a5009b59deb2ed413bb2faf285cb8195566a3200d89a"
     },
     {
       "path": "docs/PROVIDERS.md",

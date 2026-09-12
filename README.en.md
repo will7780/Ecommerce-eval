@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/will7780/commerce-agent-eval/actions/workflows/ci.yml"><img src="https://github.com/will7780/commerce-agent-eval/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
+  <a href="https://github.com/will7780/Ecommerce-eval/actions/workflows/ci.yml"><img src="https://github.com/will7780/Ecommerce-eval/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-16806A?style=flat" alt="License: MIT"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-3572A5?style=flat" alt="Python: 3.10+"></a>
   <a href="#limits"><img src="https://img.shields.io/badge/Status-Alpha-D69E36?style=flat" alt="Status: Alpha"></a>
@@ -54,8 +54,8 @@ Prerequisites: Git and Python 3.10+. This is a **source installation**, not a Py
 installation. The repository includes built web assets; Node.js is not needed to try it.
 
 ```bash
-git clone https://github.com/will7780/commerce-agent-eval.git
-cd commerce-agent-eval
+git clone https://github.com/will7780/Ecommerce-eval.git
+cd Ecommerce-eval
 python -m venv .venv
 ```
 
@@ -187,7 +187,7 @@ With Node.js 22.20 or later, run this in your product workspace to install the e
 Skill for Codex in the current project:
 
 ```bash
-npx skills add will7780/commerce-agent-eval --skill ecommerce-eval-onboarding --agent codex --copy
+npx skills add will7780/Ecommerce-eval --skill ecommerce-eval-onboarding --agent codex --copy
 ```
 
 This uses the third-party [Skills CLI](https://github.com/vercel-labs/skills) and

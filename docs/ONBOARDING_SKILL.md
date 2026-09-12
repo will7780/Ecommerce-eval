@@ -44,7 +44,7 @@ and missing evidence never becomes N/A.
 With Node.js 22.20 or later available, run this from your product workspace:
 
 ```bash
-npx skills add will7780/commerce-agent-eval --skill ecommerce-eval-onboarding --agent codex --copy
+npx skills add will7780/Ecommerce-eval --skill ecommerce-eval-onboarding --agent codex --copy
 ```
 
 This third-party [Skills CLI](https://github.com/vercel-labs/skills) downloads the
@@ -56,7 +56,7 @@ Review the confirmation and existing installations before replacing anything.
 To inspect the available Skill without installation:
 
 ```bash
-npx skills add will7780/commerce-agent-eval --list
+npx skills add will7780/Ecommerce-eval --list
 ```
 
 After installation, use `$ecommerce-eval-onboarding` in your next Codex task/turn.

@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/will7780/commerce-agent-eval/actions/workflows/ci.yml"><img src="https://github.com/will7780/commerce-agent-eval/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
+  <a href="https://github.com/will7780/Ecommerce-eval/actions/workflows/ci.yml"><img src="https://github.com/will7780/Ecommerce-eval/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-16806A?style=flat" alt="License: MIT"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-3572A5?style=flat" alt="Python: 3.10+"></a>
   <a href="#limits"><img src="https://img.shields.io/badge/Status-Alpha-D69E36?style=flat" alt="Status: Alpha"></a>
@@ -45,8 +45,8 @@ E-commerce Eval 源于开发者在 Amazon、Temu、AliExpress 多平台的商品
 前提：Git、Python 3.10+。以下是**源码安装**，不是 PyPI 安装说明；仓库包含网页构建产物，普通体验不需要 Node.js。
 
 ```bash
-git clone https://github.com/will7780/commerce-agent-eval.git
-cd commerce-agent-eval
+git clone https://github.com/will7780/Ecommerce-eval.git
+cd Ecommerce-eval
 python -m venv .venv
 ```
 
@@ -157,7 +157,7 @@ commerce-eval --database ./demo.db demo --port 8771
 已安装 Node.js 22.20 或以上版本时，在你的产品工程目录执行以下命令，将完整 Skill 安装给当前项目的 Codex：
 
 ```bash
-npx skills add will7780/commerce-agent-eval --skill ecommerce-eval-onboarding --agent codex --copy
+npx skills add will7780/Ecommerce-eval --skill ecommerce-eval-onboarding --agent codex --copy
 ```
 
 这是第三方 [Skills CLI](https://github.com/vercel-labs/skills)，会联网下载；确认安装范围后使用。它只安装 Skill，不安装测评平台，不运行考试。需要跨项目使用时可另外选择 `--global`。[完整安装说明](docs/ONBOARDING_SKILL.md)
